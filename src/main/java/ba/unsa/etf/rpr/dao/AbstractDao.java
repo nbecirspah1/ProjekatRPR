@@ -63,6 +63,25 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
      */
     public abstract Map<String, Object> object2row(T object);
 
+    public T getById(int id) throws ProjekatException{
+        return executeQueryUnique("SELECT * FROM" + this.imeTabele + "WHERE id = ?", new Object[]{id});
+    }
+    public List<T> getAll() throws ProjekatException{
+        return executeQuery("SELECT * FROM " + this.imeTabele, null);
+    }
+
+    public void delete(int id) throws ProjekatException{
+        String query = "DELETE FROM" + this.imeTabele + "WHERE id = ?";
+        try{
+            PreparedStatement statement = getConnection().prepareStatement(query);
+            statement.setObject(1, id);
+            statement.executeUpdate();
+
+        }catch(SQLException e){
+            throw new ProjekatException(e.getMessage(), e);
+        }
+    }
+
     /**
      * This method represents utility method which is used
      * for executing any kind of query
@@ -90,6 +109,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Utility method that always returns single record
+     * @param query
+     * @param params
+     * @return Object
+     * @throws ProjekatException - when object is not found
+     */
     public T executeQueryUnique(String query, Object[] params) throws  ProjekatException{
         List<T> result = executeQuery(query, params);
         if(result != null && result.size() == 1){
