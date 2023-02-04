@@ -3,10 +3,9 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -63,4 +62,31 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
      * @return key, value sorted map of object
      */
     public abstract Map<String, Object> object2row(T object);
+
+    /**
+     * This method represents utility method which is used
+     * for executing any kind of query
+     * @param query
+     * @param params
+     * @return List of objects
+     * @throws ProjekatException
+     */
+    public List<T> executeQuery(String query, Object[] params) throws ProjekatException{
+        try{
+            PreparedStatement statement = getConnection().prepareStatement(query);
+            if(params != null){
+                for(int i=1; i<params.length; i++){
+                    statement.setObject(i, params[i-1]);
+                }
+            }
+            ResultSet rSet = statement.executeQuery();
+            ArrayList<T> resultList = new ArrayList<>();
+            while(rSet.next()){
+                resultList.add(row2object(rSet));
+            }
+            return resultList;
+        } catch (SQLException e){
+            throw new ProjekatException(e.getMessage(), e);
+        }
+    }
 }
