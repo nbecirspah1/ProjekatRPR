@@ -89,4 +89,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
             throw new ProjekatException(e.getMessage(), e);
         }
     }
+
+    public T executeQueryUnique(String query, Object[] params) throws  ProjekatException{
+        List<T> result = executeQuery(query, params);
+        if(result != null && result.size() == 1){
+            return result.get(0);
+        }else{
+            throw new ProjekatException("Object not found.");
+        }
+    }
 }
