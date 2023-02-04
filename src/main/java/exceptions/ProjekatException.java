@@ -1,5 +1,10 @@
 package exceptions;
 
-public class TrgovinaException {
-    
+public class ProjekatException extends Exception {
+ public ProjekatException(String poruka, Exception razlog){
+     super(poruka, razlog);
+ }
+ public ProjekatException(String poruka){
+     super(poruka);
+ }
 }
