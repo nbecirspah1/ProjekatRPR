@@ -79,11 +79,32 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
- /*   public T add(T item) throws ProjekatException{
+    public T add(T item) throws ProjekatException{
         Map<String, Object> row = object2row(item);
         Map.Entry<String, String> columns = prepareInsertParts(row);
+        StringBuilder builder = new StringBuilder();
+        builder.append("INSERT INTO").append(this.imeTabele);
+        builder.append("(").append(columns.getKey()).append(")");
+        builder.append("VALUES (").append((columns.getValue())).append(")");
 
-    }*/
+        try{
+            PreparedStatement statement = getConnection().prepareStatement(builder.toString(), Statement.RETURN_GENERATED_KEYS);
+            int i =1;
+            for(Map.Entry<String, Object> entry : row.entrySet()) {
+                if(entry.getKey().equals("id")) continue;
+                statement.setObject(i, entry.getValue());
+                i++;
+            }
+            statement.executeUpdate();
+            ResultSet rs = statement.getGeneratedKeys();
+            rs.next();
+            item.setId(rs.getInt(1));
+
+            return item;
+        }catch(SQLException e){
+            throw  new ProjekatException(e.getMessage(), e);
+        }
+    }
     /**
      * This method represents utility method which is used
      * for executing any kind of query
