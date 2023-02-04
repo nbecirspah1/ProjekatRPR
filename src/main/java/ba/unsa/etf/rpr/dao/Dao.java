@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import exceptions.ProjekatException;
+import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package exceptions;
+package ba.unsa.etf.rpr.exceptions;
 
 public class ProjekatException extends Exception {
  public ProjekatException(String poruka, Exception razlog){
