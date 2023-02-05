@@ -2,12 +2,16 @@ package ba.unsa.etf.rpr.domain;
 
 public class Kategorija implements Idable{
     private int id;
-    private int name;
-    private int gender;
+    private String name;
+    private String gender;
 
-    public Kategorija(int name, int gender) {
+    public Kategorija(String name, String gender) {
         this.name = name;
         this.gender = gender;
+    }
+
+    public Kategorija() {
+
     }
 
     @Override
@@ -20,19 +24,19 @@ public class Kategorija implements Idable{
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

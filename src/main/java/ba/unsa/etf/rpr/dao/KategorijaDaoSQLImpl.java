@@ -1,0 +1,38 @@
+package ba.unsa.etf.rpr.dao;
+
+import ba.unsa.etf.rpr.domain.Kategorija;
+import ba.unsa.etf.rpr.exceptions.ProjekatException;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements KategorijaDao {
+    private  KategorijaDaoSQLImpl(){
+        super("Kategorija");
+    }
+
+    @Override
+    public Kategorija row2object (ResultSet rs) throws ProjekatException{
+        try{
+            Kategorija kat = new Kategorija();
+            kat.setId(rs.getInt("idKategorija"));
+            kat.setName(rs.getString("imeKategorije"));
+            kat.setGender(rs.getString("spol"));
+            return kat;
+        }catch(SQLException e){
+            throw new ProjekatException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Map<String, Object> object2row (Kategorija object){
+        Map<String, Object> row = new TreeMap<>();
+        row.put("idKategorija", object.getId());
+        row.put("imeKategorije", object.getName());
+        row.put("spol", object.getGender());
+        return row;
+    }
+}
+
