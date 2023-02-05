@@ -10,6 +10,10 @@ public class Korpa implements Idable{
         this.totalCost = totalCost;
     }
 
+    public Korpa() {
+
+    }
+
     @Override
     public int getId() {
         return id;
