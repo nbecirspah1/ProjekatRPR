@@ -46,4 +46,12 @@ public class ProizvodDetalji implements Idable{
     public void setStockLevel(int stockLevel) {
         this.stockLevel = stockLevel;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProizvodDetalji pd = (ProizvodDetalji) o;
+        return id == pd.id;
+    }
 }
