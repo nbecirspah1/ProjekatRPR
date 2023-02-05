@@ -15,6 +15,10 @@ public class Placanje implements Idable{
         this.paymentMethod = paymentMethod;
     }
 
+    public Placanje() {
+
+    }
+
     @Override
     public void setId(int id) {
         this.id = id;

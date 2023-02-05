@@ -9,10 +9,16 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements KategorijaDao {
+    private static KategorijaDaoSQLImpl instance = null;
     private  KategorijaDaoSQLImpl(){
         super("Kategorija");
     }
 
+    public static KategorijaDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new KategorijaDaoSQLImpl();
+        return instance;
+    }
     @Override
     public Kategorija row2object (ResultSet rs) throws ProjekatException{
         try{
