@@ -11,7 +11,16 @@ import java.util.TreeMap;
 
 public class KorpaDaoSQLImpl extends AbstractDao<Korpa> implements KorpaDao{
 
+    private static KorpaDaoSQLImpl instance = null;
+
     private KorpaDaoSQLImpl(){super("Korpa");}
+
+    public static KorpaDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new KorpaDaoSQLImpl();
+        return instance;
+    }
+
 
     @Override
     public Korpa row2object(ResultSet rs) throws ProjekatException {
