@@ -3,6 +3,22 @@ package ba.unsa.etf.rpr.domain;
 public class ProizvodDetalji implements Idable{
     private  int id;
     private String color;
+    private String size;
+
+    private int stockLevel;
+    private int ProizvodID;
+    public int getProizvodID() {
+        return ProizvodID;
+    }
+
+    public void setProizvodID(int proizvodID) {
+        ProizvodID = proizvodID;
+    }
+
+
+    public ProizvodDetalji() {
+
+    }
 
     @Override
     public int getId() {
@@ -14,10 +30,10 @@ public class ProizvodDetalji implements Idable{
         this.id = id;
     }
 
-    private String size;
-    private int stockLevel;
 
-    public ProizvodDetalji(String color, String size, int stockLevel) {
+
+
+    public ProizvodDetalji(String color, String size, int stockLevel, int ProizvodID) {
         this.color = color;
         this.size = size;
         this.stockLevel = stockLevel;
