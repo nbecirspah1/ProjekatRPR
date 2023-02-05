@@ -35,4 +35,12 @@ public class Korpa implements Idable{
     public void setTotalCost(int totalCost) {
         this.totalCost = totalCost;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Korpa korpa = (Korpa) o;
+        return id == korpa.id;
+    }
 }
