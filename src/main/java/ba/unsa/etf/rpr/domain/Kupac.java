@@ -74,7 +74,7 @@ public class Kupac implements Idable {
         this.password = password;
     }
 
-    public Object getPassword() {
+    public String getPassword() {
         return password;
     }
 }
