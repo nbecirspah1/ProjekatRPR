@@ -35,4 +35,12 @@ public class Kategorija implements Idable{
     public void setGender(int gender) {
         this.gender = gender;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kategorija category = (Kategorija) o;
+        return id == category.id;
+    }
 }
