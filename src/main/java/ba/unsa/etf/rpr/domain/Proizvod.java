@@ -12,10 +12,12 @@ public class Proizvod implements Idable {
         this.kategorijaID = kategorijaID;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
