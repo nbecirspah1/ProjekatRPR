@@ -17,6 +17,9 @@ public class Kupac implements Idable {
         this.password = password;
     }
 
+    public Kupac() {
+    }
+
     @Override
     public int getId() {
         return id;
@@ -65,5 +68,13 @@ public class Kupac implements Idable {
         if (o == null || getClass() != o.getClass()) return false;
         Kupac kupac = (Kupac) o;
         return id == kupac.id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Object getPassword() {
+        return password;
     }
 }
