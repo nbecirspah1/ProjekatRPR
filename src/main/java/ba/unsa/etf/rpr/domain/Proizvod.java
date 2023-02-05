@@ -45,4 +45,12 @@ public class Proizvod implements Idable {
     public void setKategorijaID(int kategorijaID) {
         this.kategorijaID = kategorijaID;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Proizvod p = (Proizvod) o;
+        return id == p.id;
+    }
 }
