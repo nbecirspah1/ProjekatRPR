@@ -48,4 +48,12 @@ public class Placanje implements Idable{
     public String getPaymentMethod() {
         return paymentMethod;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Placanje payment = (Placanje) o;
+        return id == payment.id;
+    }
 }
