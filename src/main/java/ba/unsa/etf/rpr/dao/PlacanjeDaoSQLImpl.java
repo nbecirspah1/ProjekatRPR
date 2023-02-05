@@ -10,9 +10,15 @@ import java.util.TreeMap;
 
 public class PlacanjeDaoSQLImpl extends AbstractDao<Placanje> implements PlacanjeDao{
 
-
+    private static PlacanjeDaoSQLImpl instance = null;
     public PlacanjeDaoSQLImpl() {
         super("Placanje");
+    }
+
+    public static PlacanjeDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new PlacanjeDaoSQLImpl();
+        return instance;
     }
 
     @Override
