@@ -9,7 +9,15 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> implements  ProizvodDetaljiDao{
+
+    private static ProizvodDetaljiDaoSQLImpl instance = null;
     ProizvodDetaljiDaoSQLImpl(){super("ProizvodDetalji");}
+
+    public static ProizvodDetaljiDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new ProizvodDetaljiDaoSQLImpl();
+        return instance;
+    }
 
     @Override
     public ProizvodDetalji row2object(ResultSet rs) throws ProjekatException{
