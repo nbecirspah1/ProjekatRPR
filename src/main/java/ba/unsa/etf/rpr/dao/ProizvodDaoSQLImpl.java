@@ -10,8 +10,15 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements ProizvodDao {
+    private static ProizvodDaoSQLImpl instance = null;
     private ProizvodDaoSQLImpl() {
         super("Proizvod");
+    }
+
+    public static ProizvodDaoSQLImpl getInstance(){
+        if(instance==null)
+            instance = new ProizvodDaoSQLImpl();
+        return instance;
     }
 
     @Override
