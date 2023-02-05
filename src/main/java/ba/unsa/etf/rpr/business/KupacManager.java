@@ -36,7 +36,7 @@ public class KupacManager {
 
     public Kupac add(Kupac kupac) throws ProjekatException{
         if(kupac.getId() != 0){
-            throw new ProjekatException("Kateogrija s apostojećim ID-em se ne može dodati. ID mora biti automatski generisan.");
+            throw new ProjekatException("Kategorija sa postojećim ID-em se ne može dodati. ID mora biti automatski generisan.");
         }
         validateKupacName(kupac.getName());
         validateKupacSurname(kupac.getSurname());
@@ -46,9 +46,7 @@ public class KupacManager {
         try{
             return DaoFactory.kupacDao().add(kupac);
         }catch(ProjekatException e){
-            if (e.getMessage().contains("UQ_NAME")){
-                throw new ProjekatException("Category with same name exists");
-            }
+
             throw e;
         }
 

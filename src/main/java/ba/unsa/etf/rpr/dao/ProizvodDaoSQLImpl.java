@@ -1,11 +1,13 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -44,5 +46,10 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
         row.put("kategorijaID", object.getKategorijaID());
 
         return row;
+    }
+
+    @Override
+    public List<Proizvod> searchByCategory(Kategorija kategorija) throws ProjekatException{
+        return executeQuery("SELECT * FROM quotes WHERE kategorijaID = ?", new Object[]{kategorija.getId()});
     }
 }
