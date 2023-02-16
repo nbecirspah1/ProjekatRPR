@@ -23,7 +23,7 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
     public Kategorija row2object (ResultSet rs) throws ProjekatException{
         try{
             Kategorija kat = new Kategorija();
-            kat.setId(rs.getInt("idKategorija"));
+            kat.setId(rs.getInt("id"));
             kat.setName(rs.getString("imeKategorije"));
             kat.setGender(rs.getString("spol"));
             return kat;
@@ -35,7 +35,7 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
     @Override
     public Map<String, Object> object2row (Kategorija object){
         Map<String, Object> row = new TreeMap<>();
-        row.put("idKategorija", object.getId());
+        row.put("id", object.getId());
         row.put("imeKategorije", object.getName());
         row.put("spol", object.getGender());
         return row;

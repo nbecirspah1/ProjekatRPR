@@ -81,9 +81,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
 
     public T add(T item) throws ProjekatException{
         Map<String, Object> row = object2row(item);
+        Map<String, Object> row1 = object2row(item);
+        row1.remove("id");
         Map.Entry<String, String> columns = prepareInsertParts(row);
         StringBuilder builder = new StringBuilder();
-        builder.append("INSERT INTO").append(this.imeTabele);
+        builder.append("INSERT INTO ").append(this.imeTabele);
         builder.append("(").append(columns.getKey()).append(")");
         builder.append("VALUES (").append((columns.getValue())).append(")");
 

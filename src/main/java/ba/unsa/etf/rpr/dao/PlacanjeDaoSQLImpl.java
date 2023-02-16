@@ -25,7 +25,7 @@ public class PlacanjeDaoSQLImpl extends AbstractDao<Placanje> implements Placanj
     public Placanje row2object(ResultSet rs) throws ProjekatException{
         try {
             Placanje placanje = new Placanje();
-            placanje.setId(rs.getInt("idPlacanje"));
+            placanje.setId(rs.getInt("id"));
             placanje.setKorpaID(rs.getInt("korpaID"));
             placanje.setPaymentDate(rs.getDate("DatumPlacanja"));
             placanje.setPaymentMethod(rs.getString("NacinPlacanja"));
@@ -38,7 +38,7 @@ public class PlacanjeDaoSQLImpl extends AbstractDao<Placanje> implements Placanj
     @Override
     public Map<String, Object> object2row (Placanje object){
         Map<String, Object> row = new TreeMap<>();
-        row.put("idPlacanje", object.getId());
+        row.put("id", object.getId());
         row.put("korpaID", object.getKorpaID());
         row.put("DatumPlacanja", object.getPaymentDate());
         row.put("NacinPlacanja", object.getPaymentMethod());

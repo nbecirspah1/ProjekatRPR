@@ -26,7 +26,7 @@ public class KorpaDaoSQLImpl extends AbstractDao<Korpa> implements KorpaDao{
     public Korpa row2object(ResultSet rs) throws ProjekatException {
      try{
          Korpa korpa = new Korpa();
-         korpa.setId(rs.getInt("idKorpa"));
+         korpa.setId(rs.getInt("id"));
          korpa.setProizvodID(rs.getInt("ProizvodID"));
          korpa.setTotalCost(rs.getInt("ukupnaCijena"));
          return korpa;
@@ -38,7 +38,7 @@ public class KorpaDaoSQLImpl extends AbstractDao<Korpa> implements KorpaDao{
     @Override
     public Map<String, Object> object2row (Korpa object){
         Map<String, Object> row = new TreeMap<>();
-        row.put("idKorpa", object.getId());
+        row.put("id", object.getId());
         row.put("ProizvodID", object.getProizvodID());
         row.put("ukupnaCijena", object.getTotalCost());
 

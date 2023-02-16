@@ -23,7 +23,7 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
     public ProizvodDetalji row2object(ResultSet rs) throws ProjekatException{
         try{
             ProizvodDetalji pDetalji = new ProizvodDetalji();
-            pDetalji.setId(rs.getInt("idProizvodDetalji"));
+            pDetalji.setId(rs.getInt("id"));
             pDetalji.setColor(rs.getString("boja"));
             pDetalji.setSize(rs.getString("velicina"));
             pDetalji.setStockLevel(rs.getInt("kolicinaNaStanju"));
@@ -37,7 +37,7 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
     @Override
     public Map<String, Object> object2row(ProizvodDetalji object){
         Map<String, Object> row = new TreeMap<>();
-        row.put("idProizvodDetalji", object.getId());
+        row.put("id", object.getId());
         row.put("boja", object.getColor());
         row.put("velicina", object.getSize());
         row.put("kolicinaNaStanju", object.getStockLevel());

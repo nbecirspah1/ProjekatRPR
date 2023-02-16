@@ -24,7 +24,7 @@ public class KupacDaoSQLImpl extends AbstractDao<Kupac> implements KupacDao{
     public Kupac row2object(ResultSet rs) throws ProjekatException{
         try{
             Kupac kupac = new Kupac();
-            kupac.setId(rs.getInt("idKupac"));
+            kupac.setId(rs.getInt("id"));
             kupac.setName(rs.getString("ime"));
             kupac.setSurname(rs.getString("prezime"));
             kupac.setAdress(rs.getString("adresa"));
@@ -39,7 +39,7 @@ public class KupacDaoSQLImpl extends AbstractDao<Kupac> implements KupacDao{
     @Override
     public Map<String, Object> object2row (Kupac object){
         Map<String, Object> row = new TreeMap<>();
-        row.put("idKupac", object.getId());
+        row.put("id", object.getId());
         row.put("ime", object.getName());
         row.put("prezime", object.getSurname());
         row.put("adresa", object.getAdress());

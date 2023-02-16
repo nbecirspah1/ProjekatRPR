@@ -27,7 +27,7 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
     public Proizvod row2object(ResultSet rs) throws ProjekatException {
         try {
             Proizvod proizvod = new Proizvod();
-            proizvod.setId(rs.getInt("idProizvod"));
+            proizvod.setId(rs.getInt("id"));
             proizvod.setOpis(rs.getString("opisProizvoda"));
             proizvod.setCijena(rs.getDouble("cijena"));
             proizvod.setKategorijaID(rs.getInt("kategorijaID"));
@@ -40,7 +40,7 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
     @Override
     public Map<String, Object> object2row(Proizvod object) {
         Map<String, Object> row = new TreeMap<>();
-        row.put("idProizvod", object.getId());
+        row.put("id", object.getId());
         row.put("opisProizvoda", object.getOpis());
         row.put("cijena", object.getCijena());
         row.put("kategorijaID", object.getKategorijaID());
