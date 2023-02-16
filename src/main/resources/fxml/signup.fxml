@@ -44,7 +44,7 @@
                         <Insets left="30.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Label>
-                <TextField>
+                <TextField fx:id="@txtFieldImeID" text="${controller.txtFieldImeID}">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -60,7 +60,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="@txtFieldPrezimeID" text="${controller.txtFieldPrezimeID}">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -76,7 +76,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="@txtFieldAdresa" text="${controller.txtFieldAdresa}">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -92,7 +92,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="@txtFieldBrTelID" text="${controller.txtFieldBrTelID}">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -108,7 +108,7 @@
                         <Insets left="30.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Label>
-                <TextField>
+                <TextField fx:id="@txtFieldSifraID" text="${controller.txtFieldSifraID}">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -116,7 +116,7 @@
                         <Insets bottom="10.0" left="30.0" right="30.0" />
                     </VBox.margin>
                 </TextField>
-                <Button defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="560.0" text="REGISTRUJ SE" textAlignment="CENTER">
+                <Button fx:id="ButtonID" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="560.0" text="REGISTRUJ SE" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets left="30.0" right="30.0" top="30.0" />
                     </VBox.margin>
