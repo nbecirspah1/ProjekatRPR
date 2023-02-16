@@ -44,7 +44,7 @@
                         <Insets left="30.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Label>
-                <TextField fx:id="@txtFieldImeID" text="${controller.txtFieldImeID}">
+                <TextField fx:id="txtFieldImeID">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -60,7 +60,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="@txtFieldPrezimeID" text="${controller.txtFieldPrezimeID}">
+            <TextField fx:id="txtFieldPrezimeID">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -76,7 +76,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="@txtFieldAdresa" text="${controller.txtFieldAdresa}">
+            <TextField fx:id="txtFieldAdresa" >
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -92,7 +92,7 @@
                   <Insets left="30.0" right="30.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="@txtFieldBrTelID" text="${controller.txtFieldBrTelID}">
+            <TextField fx:id="txtFieldBrTelID" >
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -108,7 +108,7 @@
                         <Insets left="30.0" right="10.0" top="10.0" />
                     </VBox.margin>
                 </Label>
-                <TextField fx:id="@txtFieldSifraID" text="${controller.txtFieldSifraID}">
+                <TextField fx:id="txtFieldSifraID" >
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>

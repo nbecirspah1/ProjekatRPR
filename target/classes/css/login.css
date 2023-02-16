@@ -27,6 +27,7 @@ VBox > TextField {
   -fx-border-radius: 20px;
    -fx-background-radius: 20px;
   -fx-border-width: 1;
+  -fx-control-inner-background: rgba(255, 255, 255, 1);
 }
 
 /* Apply to the Button element inside the VBox */
