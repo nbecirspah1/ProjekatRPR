@@ -22,7 +22,7 @@ VBox > Label {
 
 /* Apply to the TextField elements inside the VBox */
 VBox > TextField {
-  -fx-background-color: #fff;
+  -fx-background-color: rgba(255, 255, 255, 0.5);
   -fx-border-color: #ccc;
   -fx-border-radius: 20px;
    -fx-background-radius: 20px;

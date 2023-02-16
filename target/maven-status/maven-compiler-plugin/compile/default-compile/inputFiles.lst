@@ -1,7 +1,9 @@
+C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\LoginController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KorpaDao.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business\KupacManager.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\domain\ProizvodDetalji.java
+C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\SignupController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\domain\Placanje.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KorpaDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\App.java
@@ -21,6 +23,5 @@ C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\domain\K
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\PlacanjeDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\DaoFactory.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\ProizvodDetaljiDaoSQLImpl.java
-C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\SampleController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\PlacanjeDao.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\exceptions\ProjekatException.java

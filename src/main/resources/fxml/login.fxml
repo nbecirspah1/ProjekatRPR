@@ -47,7 +47,7 @@
       </ButtonBar>
       <VBox GridPane.rowIndex="1">
          <children>
-            <Label text="USERNAME">
+            <Label text="IME I PREZIME">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -63,7 +63,7 @@
                   <Insets left="30.0" right="30.0" />
                </VBox.margin>
             </TextField>
-            <Label text="PASSWORD">
+            <Label text="ŠIFRA">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -79,7 +79,7 @@
                   <Insets left="30.0" right="30.0" />
                </VBox.margin>
             </TextField>
-            <Button defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="560.0" text="SIGN IN" textAlignment="CENTER">
+            <Button defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="560.0" text="PRIJAVI SE" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="30.0" />
                </VBox.margin>
