@@ -29,7 +29,6 @@ public class App extends Application
         primaryStage.setTitle("Welcome!");
         Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
         primaryStage.getIcons().add(icon);
-      //  Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         primaryStage.setResizable(true);
         primaryStage.show();
