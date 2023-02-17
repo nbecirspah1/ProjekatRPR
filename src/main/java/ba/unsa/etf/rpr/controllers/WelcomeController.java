@@ -23,6 +23,15 @@ public class WelcomeController {
         stage.show();
     }
 
-    public void onSignUpClick(ActionEvent actionEvent) {
+    public void onSignUpClick(ActionEvent actionEvent) throws Exception{
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/signup.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Registracija");
+        Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
+        stage.getIcons().add(icon);
+        Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 }
