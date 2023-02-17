@@ -14,7 +14,7 @@ public class WelcomeController {
     public void onLoginClick(ActionEvent actionEvent) throws Exception{
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Welcome!");
+        stage.setTitle("Prijava");
         Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
         stage.getIcons().add(icon);
         Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
