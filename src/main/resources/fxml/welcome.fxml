@@ -3,48 +3,61 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPaneID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/css/welcome.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox>
+            <VBox alignment="CENTER">
                <children>
-                  <Label text="DOBRODOŠLI!">
+                  <Label text="DOBRODOŠLI!" textFill="WHITE">
                      <font>
                         <Font size="50.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="30.0" right="30.0" top="50.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextArea prefHeight="200.0" prefWidth="200.0">
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
-                  </TextArea>
                </children>
                <HBox.margin>
-                  <Insets bottom="50.0" top="50.0" />
+                  <Insets bottom="30.0" left="20.0" />
                </HBox.margin>
             </VBox>
             <VBox alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="Prijavite se " />
-                  <Label text="Nemate račun?" />
-                  <Button mnemonicParsing="false" text="Registrujte se" />
+                  <Button fx:id="prijavaButton" mnemonicParsing="false" text="  Prijavite se " textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="Nemate račun?" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="registracijaButton" mnemonicParsing="false" text="Registrujte se" textFill="WHITE" />
                </children>
                <padding>
-                  <Insets left="50.0" right="50.0" />
+                  <Insets left="50.0" right="20.0" top="10.0" />
                </padding>
             </VBox>
          </children>
       </HBox>
    </center>
+   <top>
+      <ImageView fitHeight="150.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
+         <image>
+            <Image url="@../img/logo.jpg" />
+         </image>
+         <BorderPane.margin>
+            <Insets top="60.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
 </BorderPane>

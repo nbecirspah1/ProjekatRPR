@@ -24,5 +24,6 @@ ba\unsa\etf\rpr\exceptions\ProjekatException.class
 ba\unsa\etf\rpr\business\KupacManager.class
 ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\KategorijaDao.class
+ba\unsa\etf\rpr\controllers\WelcomeController.class
 ba\unsa\etf\rpr\dao\AbstractDao.class
 ba\unsa\etf\rpr\dao\KupacDaoSQLImpl.class

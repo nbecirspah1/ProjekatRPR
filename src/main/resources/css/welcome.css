@@ -1,0 +1,16 @@
+.root{
+    -fx-background-color: #284A6F;
+}
+
+#prijavaButton{
+    -fx-background-color: #6EB3AE;
+}
+#prijavaButton:hover{
+    -fx-background-color: rgba(110, 179, 174, 0.75);
+}
+#registracijaButton{
+    -fx-background-color: rgba(110, 179, 174, 0.5);
+}
+#registracijaButton:hover{
+    -fx-background-color: rgba(110, 179, 174, 0.25);
+}
