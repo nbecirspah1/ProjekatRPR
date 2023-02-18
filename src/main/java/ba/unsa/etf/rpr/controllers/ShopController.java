@@ -59,6 +59,16 @@ public class ShopController {
 
         }
     }
+
+    public void onSveClick(ActionEvent actionEvent) {
+        try{
+            dodavanjeProizvoda(manager.getAll());
+
+        }catch(ProjekatException e){
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+        }
+    }
     public void dodavanjeProizvoda(List<Proizvod> proizvodi) {
         scrollPaneID.setVvalue(0.0);
         flowPaneID.getChildren().clear();
@@ -90,6 +100,7 @@ public class ShopController {
             }
         }
     }
+
 
 
 }
