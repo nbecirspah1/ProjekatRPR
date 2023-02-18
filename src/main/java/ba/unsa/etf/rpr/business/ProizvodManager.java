@@ -24,4 +24,8 @@ public class ProizvodManager {
     public Kategorija getIDKategorije(String imeKategorije) throws ProjekatException{
         return DaoFactory.kategorijaDao().getIDofCategory(imeKategorije);
     }
+
+    public List<Proizvod> searchByPrice(int cijena) throws ProjekatException{
+        return DaoFactory.proizvodDao().searchByPrice(cijena);
+    }
 }
