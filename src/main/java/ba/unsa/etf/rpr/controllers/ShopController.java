@@ -31,32 +31,8 @@ public class ShopController {
     public void initialize() throws ProjekatException {
         try {
             List<Proizvod> proizvodi = manager.getAll();
-            for (Proizvod proizvod : proizvodi) {
-                try {
-                    ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(proizvod.getSlika())));
-                   // System.out.println("OVO JE KAO KAO KAO SLIKA " + imageView);
-                    imageView.setFitWidth(400);
-                    imageView.setFitHeight(400);
+            dodavanjeProizvoda(proizvodi);
 
-                    Label opis = new Label(proizvod.getOpis());
-                    opis.setAlignment(Pos.CENTER);
-                    opis.setId("opisID");
-
-                    Label cijena = new Label(String.format("%.2f KM", proizvod.getCijena()));
-                    cijena.setAlignment(Pos.CENTER);
-                    cijena.setId("cijenaID");
-
-                    VBox vBox = new VBox(imageView, opis, cijena);
-                    vBox.setAlignment(Pos.CENTER);
-                    vBox.setSpacing(10.0);
-                    vBox.setId("vBoxID");
-
-                    flowPaneID.getChildren().add(vBox);
-                }catch(Exception e){
-                    new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
-
-                }
-            }
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
 
@@ -65,5 +41,34 @@ public class ShopController {
 
     public void onNaocaleClick(ActionEvent actionEvent) {
 
+    }
+
+    public void dodavanjeProizvoda(List<Proizvod> proizvodi){
+        for (Proizvod proizvod : proizvodi) {
+            try {
+                ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(proizvod.getSlika())));
+                // System.out.println("OVO JE KAO KAO KAO SLIKA " + imageView);
+                imageView.setFitWidth(400);
+                imageView.setFitHeight(400);
+
+                Label opis = new Label(proizvod.getOpis());
+                opis.setAlignment(Pos.CENTER);
+                opis.setId("opisID");
+
+                Label cijena = new Label(String.format("%.2f KM", proizvod.getCijena()));
+                cijena.setAlignment(Pos.CENTER);
+                cijena.setId("cijenaID");
+
+                VBox vBox = new VBox(imageView, opis, cijena);
+                vBox.setAlignment(Pos.CENTER);
+                vBox.setSpacing(10.0);
+                vBox.setId("vBoxID");
+
+                flowPaneID.getChildren().add(vBox);
+            }catch(Exception e){
+                new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+            }
+        }
     }
 }
