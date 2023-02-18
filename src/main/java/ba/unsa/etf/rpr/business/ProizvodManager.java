@@ -14,4 +14,8 @@ public class ProizvodManager {
     }
 
 
+
+    public Kategorija getIDKategorije(String imeKategorije) throws ProjekatException{
+        return DaoFactory.kategorijaDao().getIDofCategory(imeKategorije);
+    }
 }
