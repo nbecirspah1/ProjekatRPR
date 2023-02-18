@@ -14,6 +14,12 @@ public class ProizvodManager {
     }
 
 
+    public List<Proizvod> getByCategory(String imeKategorije) throws ProjekatException{
+        Kategorija kategorijaID = getIDKategorije(imeKategorije);
+        return DaoFactory.proizvodDao().searchByCategory(kategorijaID);
+
+    }
+
 
     public Kategorija getIDKategorije(String imeKategorije) throws ProjekatException{
         return DaoFactory.kategorijaDao().getIDofCategory(imeKategorije);
