@@ -14,6 +14,8 @@ import javafx.scene.layout.FlowPane;
 import java.io.*;
 import java.util.List;
 
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
 public class ShopController {
 
 
