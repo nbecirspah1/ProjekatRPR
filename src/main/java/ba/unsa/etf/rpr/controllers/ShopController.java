@@ -6,9 +6,7 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -25,6 +23,8 @@ public class ShopController {
 
 
     public FlowPane flowPaneID;
+    public Button naocaleButton;
+    public ScrollPane scrollPaneID;
     private ProizvodManager manager = new ProizvodManager();
 
     @FXML
@@ -39,12 +39,22 @@ public class ShopController {
         }
     }
 
-    public void onNaocaleClick(ActionEvent actionEvent) {
+    public void onNaocaleClick(ActionEvent actionEvent) throws ProjekatException {
+        try{
+            dodavanjeProizvoda(manager.getByCategory("naocale"));
+
+        }catch(ProjekatException e){
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+        }
 
     }
 
-    public void dodavanjeProizvoda(List<Proizvod> proizvodi){
+    public void dodavanjeProizvoda(List<Proizvod> proizvodi) {
+        scrollPaneID.setVvalue(0.0);
+        flowPaneID.getChildren().clear();
         for (Proizvod proizvod : proizvodi) {
+
             try {
                 ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(proizvod.getSlika())));
                 // System.out.println("OVO JE KAO KAO KAO SLIKA " + imageView);
