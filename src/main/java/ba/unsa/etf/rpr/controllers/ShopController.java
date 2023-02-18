@@ -28,8 +28,8 @@ public class ShopController {
                 try {
                     ImageView imageView = new ImageView(new Image(new ByteArrayInputStream(proizvod.getSlika())));
                    // System.out.println("OVO JE KAO KAO KAO SLIKA " + imageView);
-                    imageView.setFitWidth(200);
-                    imageView.setFitHeight(200);
+                    imageView.setFitWidth(400);
+                    imageView.setFitHeight(400);
                     flowPaneID.getChildren().add(imageView);
                 }catch(Exception e){
                     new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
