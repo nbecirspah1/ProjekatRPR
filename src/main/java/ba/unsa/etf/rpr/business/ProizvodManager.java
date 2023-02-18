@@ -25,7 +25,12 @@ public class ProizvodManager {
         return DaoFactory.kategorijaDao().getIDofCategory(imeKategorije);
     }
 
-    public List<Proizvod> searchByPrice(int cijena) throws ProjekatException{
-        return DaoFactory.proizvodDao().searchByPrice(cijena);
+    public List<Proizvod> searchByPriceAndCategory(int cijena, String kategorija) throws ProjekatException{
+        if(kategorija=="-"){
+            return DaoFactory.proizvodDao().searchByPrice(cijena);
+
+        }
+        Kategorija kategorijaID = getIDKategorije(kategorija);
+        return DaoFactory.proizvodDao().searchByPriceAndCateogry(cijena, kategorijaID);
     }
 }

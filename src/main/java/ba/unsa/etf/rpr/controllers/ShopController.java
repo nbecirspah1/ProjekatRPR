@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.ProizvodManager;
+import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
@@ -27,8 +28,9 @@ public class ShopController {
     public Button naocaleButton;
     public ScrollPane scrollPaneID;
     public ChoiceBox choiceBoxID;
+    private String kategorija="-";
 
-    private String[] cijena = { "do 100 KM", "do 200 KM", "do 300 KM", "-"};
+    private String[] cijene = { "do 100 KM", "do 200 KM", "do 300 KM", "-"};
     private ProizvodManager manager = new ProizvodManager();
 
     @FXML
@@ -36,7 +38,39 @@ public class ShopController {
         try {
             List<Proizvod> proizvodi = manager.getAll();
             dodavanjeProizvoda(proizvodi);
-            choiceBoxID.getItems().addAll(cijena);
+            choiceBoxID.getItems().addAll(cijene);
+
+            choiceBoxID.setOnAction(event -> {
+
+                String cijenaString = choiceBoxID.getValue().toString();
+                //flowPaneID.getChildren().clear();
+                if(cijenaString != "-"){
+                    String rezultat = cijenaString.replace("do ", "");
+                    rezultat = rezultat.replace(" KM", "");
+                    int cijena = Integer.parseInt(rezultat);
+                    System.out.println("CIjena je: " + cijena);
+                    try{
+                        List<Proizvod> proizvodi1 = manager.searchByPriceAndCategory(cijena, this.kategorija);
+                        dodavanjeProizvoda(proizvodi1);
+
+                    }catch (ProjekatException e){
+                        new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+                    }
+                }else{
+
+                    try{
+                        if(kategorija!="-") {
+                            List<Proizvod> proizvodiList = manager.getByCategory(kategorija);
+                            dodavanjeProizvoda(proizvodiList);
+                        }
+
+                    }catch(ProjekatException e){
+                        new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+                    }
+
+                }
+            });
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
@@ -46,7 +80,9 @@ public class ShopController {
 
     public void onNaocaleClick(ActionEvent actionEvent) throws ProjekatException {
         try{
+            choiceBoxID.setValue("-");
             dodavanjeProizvoda(manager.getByCategory("naocale"));
+            this.kategorija = "naocale";
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
@@ -57,7 +93,9 @@ public class ShopController {
 
     public void onKacigeClick(ActionEvent actionEvent) {
         try{
+            choiceBoxID.setValue("-");
             dodavanjeProizvoda(manager.getByCategory("kaciga"));
+            this.kategorija="kaciga";
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
@@ -67,6 +105,7 @@ public class ShopController {
 
     public void onSveClick(ActionEvent actionEvent) {
         try{
+            choiceBoxID.setValue("-");
             dodavanjeProizvoda(manager.getAll());
 
         }catch(ProjekatException e){
@@ -77,7 +116,9 @@ public class ShopController {
 
     public void onSkijeClick(ActionEvent actionEvent) {
         try{
+            choiceBoxID.setValue("-");
             dodavanjeProizvoda(manager.getByCategory("skije"));
+            this.kategorija = "skije";
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
@@ -87,8 +128,9 @@ public class ShopController {
 
     public void onPancericeClick(ActionEvent actionEvent) {
         try{
+            choiceBoxID.setValue("-");
             dodavanjeProizvoda(manager.getByCategory("pancerice"));
-
+            this.kategorija = "pancerice";
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
 
@@ -97,6 +139,7 @@ public class ShopController {
     public void dodavanjeProizvoda(List<Proizvod> proizvodi) {
         scrollPaneID.setVvalue(0.0);
         flowPaneID.getChildren().clear();
+       // choiceBoxID.setValue("-");
         for (Proizvod proizvod : proizvodi) {
 
             try {
@@ -138,6 +181,7 @@ public class ShopController {
             }
         }
     }
+
 
 
 
