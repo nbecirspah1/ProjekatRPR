@@ -154,7 +154,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
             }
             return resultList;
         } catch (SQLException e){
-            throw new ProjekatException(e.getMessage() + "ovdje je error", e);
+            throw new ProjekatException(e.getMessage(), e);
         }
     }
 
