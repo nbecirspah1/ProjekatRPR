@@ -21,6 +21,7 @@ ba\unsa\etf\rpr\domain\Proizvod.class
 ba\unsa\etf\rpr\dao\KupacDao.class
 ba\unsa\etf\rpr\dao\ProizvodDaoSQLImpl.class
 ba\unsa\etf\rpr\exceptions\ProjekatException.class
+ba\unsa\etf\rpr\controllers\ShopController.class
 ba\unsa\etf\rpr\business\KupacManager.class
 ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\KategorijaDao.class
