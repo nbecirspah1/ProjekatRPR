@@ -53,7 +53,7 @@
    <top>
       <ImageView fitHeight="150.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
          <image>
-            <Image url="@../img/logo.jpg" />
+            <Image url="@../img/logoBezPozadine.png" />
          </image>
          <BorderPane.margin>
             <Insets top="60.0" />

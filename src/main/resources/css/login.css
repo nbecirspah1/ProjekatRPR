@@ -44,8 +44,8 @@ VBox > Button {
 /* Apply to the Button when hovered */
 VBox > Button:hover {
 
-       -fx-background-color: lightsteelblue;
-       -fx-border-color: lightsteelblue;
+       -fx-background-color: #1D3735;
+       -fx-border-color: #1D3735;
 }
 
 /* Apply to the Button when pressed */
