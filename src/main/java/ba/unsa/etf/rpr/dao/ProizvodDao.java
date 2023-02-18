@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ProizvodDao extends Dao<Proizvod>{
     List<Proizvod> searchByCategory(Kategorija kategorija) throws ProjekatException;
+    List<Proizvod> searchByPrice(int cijena) throws ProjekatException;
 }
