@@ -34,6 +34,6 @@
     -fx-opacity: 0.7;
 }
 
-#skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover, #sveButton:hover {
+#vBoxID:hover, #skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover, #sveButton:hover {
     -fx-opacity: 1;
 }

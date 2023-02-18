@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -112,6 +113,19 @@ public class ShopController {
                 vBox.setAlignment(Pos.CENTER);
                 vBox.setSpacing(10.0);
                 vBox.setId("vBoxID");
+
+                vBox.setOnMouseEntered(event -> {
+                    Image chartIcon = new Image(getClass().getResourceAsStream("/img/buy-icon.png"));
+                    ImageView chartImageView = new ImageView(chartIcon);
+                    chartImageView.setFitWidth(50);
+                    chartImageView.setFitHeight(50);
+                    vBox.getChildren().add(chartImageView);
+                });
+
+                vBox.setOnMouseExited(event -> {
+                    vBox.getChildren().remove(vBox.getChildren().size() - 1);
+                });
+
 
                 flowPaneID.getChildren().add(vBox);
             }catch(Exception e){
