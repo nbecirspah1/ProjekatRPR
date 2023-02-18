@@ -24,8 +24,9 @@
                   <Image url="@../img/logoBezPozadine.png" />
                </image>
             </ImageView>
-          <Button fx:id="skijeButton" mnemonicParsing="false" text="Skije" />
-            <Button fx:id="pancericeButton" mnemonicParsing="false" text="Pancerice" />
+            <Button fx:id="sveButton" mnemonicParsing="false" onAction="#onSveClick" text="Sve" />
+          <Button fx:id="skijeButton" mnemonicParsing="false" onAction="#onSkijeClick" text="Skije" />
+            <Button fx:id="pancericeButton" mnemonicParsing="false" onAction="#onPancericeClick" text="Pancerice" />
             <Button fx:id="kacigeButton" mnemonicParsing="false" onAction="#onKacigeClick" text="Ski kacige" />
             <Button fx:id="naocaleButton" mnemonicParsing="false" onAction="#onNaocaleClick" text="Ski naočale" />
         </items>
