@@ -26,6 +26,9 @@ public class ShopController {
     public FlowPane flowPaneID;
     public Button naocaleButton;
     public ScrollPane scrollPaneID;
+    public ChoiceBox choiceBoxID;
+
+    private String[] cijena = { "do 100 KM", "do 200 KM", "do 300 KM", "-"};
     private ProizvodManager manager = new ProizvodManager();
 
     @FXML
@@ -33,6 +36,7 @@ public class ShopController {
         try {
             List<Proizvod> proizvodi = manager.getAll();
             dodavanjeProizvoda(proizvodi);
+            choiceBoxID.getItems().addAll(cijena);
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();

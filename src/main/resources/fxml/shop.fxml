@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
@@ -29,6 +31,8 @@
             <Button fx:id="pancericeButton" mnemonicParsing="false" onAction="#onPancericeClick" text="Pancerice" />
             <Button fx:id="kacigeButton" mnemonicParsing="false" onAction="#onKacigeClick" text="Ski kacige" />
             <Button fx:id="naocaleButton" mnemonicParsing="false" onAction="#onNaocaleClick" text="Ski naočale" />
+            <Label fx:id="labelaID" text="Cijena:" />
+            <ChoiceBox fx:id="choiceBoxID" prefWidth="120.0" />
         </items>
       </ToolBar>
    </top>

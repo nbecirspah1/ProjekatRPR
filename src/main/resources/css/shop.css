@@ -27,7 +27,7 @@
 
 }
 
-#skijeButton, #pancericeButton, #kacigeButton, #naocaleButton, #sveButton {
+#skijeButton, #pancericeButton, #kacigeButton, #naocaleButton, #sveButton, #labelaID {
     -fx-background-color: #1D3735;
     -fx-background-radius: 5;
     -fx-text-fill: white;
