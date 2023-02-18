@@ -39,12 +39,16 @@ public class ShopController {
 
                     Label opis = new Label(proizvod.getOpis());
                     opis.setAlignment(Pos.CENTER);
+                    opis.setId("opisID");
+
                     Label cijena = new Label(String.format("%.2f KM", proizvod.getCijena()));
                     cijena.setAlignment(Pos.CENTER);
+                    cijena.setId("cijenaID");
 
                     VBox vBox = new VBox(imageView, opis, cijena);
                     vBox.setAlignment(Pos.CENTER);
                     vBox.setSpacing(10.0);
+                    vBox.setId("vBoxID");
 
                     flowPaneID.getChildren().add(vBox);
                 }catch(Exception e){
