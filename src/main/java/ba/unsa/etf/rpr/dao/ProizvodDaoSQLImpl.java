@@ -67,6 +67,7 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
 
     @Override
     public List<Proizvod> searchByCategory(Kategorija kategorija) throws ProjekatException{
-        return executeQuery("SELECT * FROM Proizvod WHERE kategorijaID = ?", new Object[]{kategorija.getId()});
+        return executeQuery("SELECT * FROM freedb_rprProjekaBaza.Proizvod WHERE kategorijaID = ?", new Object[]{kategorija.getId()});
+
     }
 }

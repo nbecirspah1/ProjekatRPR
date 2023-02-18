@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -37,6 +38,13 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
         row.put("id", object.getId());
         row.put("imeKategorije", object.getName());
         return row;
+    }
+
+
+    @Override
+    public Kategorija getIDofCategory(String imeKategorije) throws ProjekatException {
+
+        return executeQueryUnique("SELECT * FROM freedb_rprProjekaBaza.Kategorija WHERE imeKategorije = ?", new Object[]{imeKategorije});
     }
 }
 
