@@ -23,7 +23,7 @@
 }
 
 #toolBarID {
-           -fx-background-color: #1D3735;;
+           -fx-background-color: #1D3735;
 
 }
 
@@ -37,3 +37,27 @@
 #vBoxID:hover, #skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover, #sveButton:hover {
     -fx-opacity: 1;
 }
+
+.choice-box {
+    -fx-background-color: white;
+    -fx-border-color: #1D3735;
+    -fx-border-width: 1px;
+}
+
+.choice-box .arrow {
+    -fx-background-color: #1D3735;
+}
+
+
+
+.choice-box .list-cell {
+    -fx-padding: 5px;
+     -fx-text-fill: #1D3735;
+
+}
+
+.choice-box .label {
+    -fx-text-fill: #1D3735;
+}
+
+
