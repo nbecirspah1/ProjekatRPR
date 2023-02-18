@@ -8,26 +8,26 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ShopController">
+<BorderPane prefHeight="640.0" prefWidth="1024.0" stylesheets="@/css/shop.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ShopController">
    <center>
-      <ScrollPane fx:id="scrollPane">
+      <ScrollPane fx:id="scrollPaneID" fitToHeight="true" fitToWidth="true">
          <content>
             <FlowPane fx:id="flowPaneID" alignment="CENTER" columnHalignment="CENTER" hgap="50.0" prefWrapLength="1024.0" vgap="20.0" />
          </content>
       </ScrollPane>
    </center>
    <top>
-      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ToolBar fx:id="toolBarID" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
             <ImageView fitHeight="55.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/logoBezPozadine.png" />
                </image>
             </ImageView>
-          <Button mnemonicParsing="false" text="Skije" />
-            <Button mnemonicParsing="false" text="Pancerice" />
-            <Button mnemonicParsing="false" text="Ski kacige" />
-            <Button mnemonicParsing="false" text="Ski naočale" />
+          <Button fx:id="skijeButton" mnemonicParsing="false" text="Skije" />
+            <Button fx:id="pancericeButton" mnemonicParsing="false" text="Pancerice" />
+            <Button fx:id="kacigeButton" mnemonicParsing="false" text="Ski kacige" />
+            <Button fx:id="naocaleButton" mnemonicParsing="false" text="Ski naočale" />
         </items>
       </ToolBar>
    </top>

@@ -25,7 +25,7 @@ public class App extends Application
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/welcome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
         primaryStage.setTitle("Welcome!");
         Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
         primaryStage.getIcons().add(icon);

@@ -1,5 +1,6 @@
-#scrollPane .viewport .content, #flowPaneID{
+#scrollPaneID .viewport .content, #flowPaneID{
            -fx-background-color: white;
+           /*#1D3735;*/
 }
 
 #vBoxID {
@@ -19,4 +20,20 @@
 #cijenaID {
     -fx-font-size: 14;
     -fx-text-fill: #666666;
+}
+
+#toolBarID {
+           -fx-background-color: #1D3735;;
+
+}
+
+#skijeButton, #pancericeButton, #kacigeButton, #naocaleButton {
+    -fx-background-color: #1D3735;
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+    -fx-opacity: 0.7;
+}
+
+#skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover {
+    -fx-opacity: 1;
 }
