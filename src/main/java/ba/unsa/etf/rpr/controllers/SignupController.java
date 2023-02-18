@@ -16,6 +16,7 @@ public class SignupController {
     public TextField txtFieldPrezimeID;
     public TextField txtFieldImeID;
     public TextField txtFieldAdresa;
+    public TextField txtFieldEmail;
     private KupacManager manager = new KupacManager();
 
 
@@ -25,7 +26,7 @@ public class SignupController {
         String adresa = txtFieldAdresa.getText();
         String brojTel = txtFieldBrTelID.getText();
         String sifra = txtFieldSifraID.getText();
-
+        String email = txtFieldEmail.getText();
 
             Kupac kupac = new Kupac();
             kupac.setName(ime);
@@ -33,6 +34,8 @@ public class SignupController {
             kupac.setAdress(adresa);
             kupac.setPhoneNumber(brojTel);
             kupac.setPassword(sifra);
+            kupac.setEmail(email);
+
             try {
                 manager.add(kupac);
 

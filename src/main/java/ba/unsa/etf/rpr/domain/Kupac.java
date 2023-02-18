@@ -8,13 +8,14 @@ public class Kupac implements Idable {
     private String adress;
     private String phoneNumber;
     private String password;
-
-    public Kupac(String name, String surname, String adress, String phoneNumber, String password) {
+    private String email;
+    public Kupac(String name, String surname, String adress, String phoneNumber, String password, String email) {
         this.name = name;
         this.surname = surname;
         this.adress = adress;
         this.phoneNumber = phoneNumber;
         this.password = password;
+        this.email = email;
     }
 
     public Kupac() {
@@ -76,5 +77,13 @@ public class Kupac implements Idable {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

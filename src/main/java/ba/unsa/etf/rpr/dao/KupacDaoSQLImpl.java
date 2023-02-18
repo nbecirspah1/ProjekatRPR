@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -30,6 +31,7 @@ public class KupacDaoSQLImpl extends AbstractDao<Kupac> implements KupacDao{
             kupac.setAdress(rs.getString("adresa"));
             kupac.setPhoneNumber(rs.getString("brojTelefona"));
             kupac.setPassword(rs.getString("password"));
+            kupac.setEmail(rs.getString("email"));
             return kupac;
         }catch(SQLException e){
             throw new ProjekatException(e.getMessage(), e);
@@ -45,7 +47,13 @@ public class KupacDaoSQLImpl extends AbstractDao<Kupac> implements KupacDao{
         row.put("adresa", object.getAdress());
         row.put("brojTelefona", object.getPhoneNumber());
         row.put("password", object.getPassword());
+        row.put("email", object.getEmail());
 
         return row;
+    }
+
+    @Override
+    public List<Kupac> searchByEmail(String email) throws ProjekatException{
+        return executeQuery("SELECT * FROM freedb_rprProjekaBaza.Kupac WHERE email = ?", new Object[]{email});
     }
 }

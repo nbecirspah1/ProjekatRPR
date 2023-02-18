@@ -33,6 +33,26 @@ public class KupacManager {
 
         }
     }
+    public void validateKupacEmail(String email) throws ProjekatException {
+        if(email == null){
+            throw new ProjekatException("Email ne može biti null.");
+
+        }
+
+        if(!searchByEmail(email).isEmpty()){
+            throw new ProjekatException("Već postoji account sa ovim emailom.");
+
+        }
+    }
+
+    public List<Kupac> searchByEmail(String email) throws ProjekatException{
+        try{
+         return DaoFactory.kupacDao().searchByEmail(email);
+        }
+        catch(ProjekatException e){
+            throw e;
+        }
+    }
 
     public Kupac add(Kupac kupac) throws ProjekatException{
         if(kupac.getId() != 0){
@@ -42,8 +62,10 @@ public class KupacManager {
         validateKupacSurname(kupac.getSurname());
         validateKupacPassword(kupac.getPassword());
         validateKupacPhoneNumber(kupac.getPhoneNumber());
+        validateKupacEmail(kupac.getEmail());
 
         try{
+
             return DaoFactory.kupacDao().add(kupac);
         }catch(ProjekatException e){
 

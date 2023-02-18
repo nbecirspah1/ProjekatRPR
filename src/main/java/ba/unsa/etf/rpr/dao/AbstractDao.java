@@ -143,8 +143,8 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         try{
             PreparedStatement statement = getConnection().prepareStatement(query);
             if(params != null){
-                for(int i=1; i<params.length; i++){
-                    statement.setObject(i, params[i-1]);
+                for(int i=0; i<params.length; i++){
+                    statement.setObject(i+1, params[i]);
                 }
             }
             ResultSet rSet = statement.executeQuery();
@@ -154,7 +154,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
             }
             return resultList;
         } catch (SQLException e){
-            throw new ProjekatException(e.getMessage(), e);
+            throw new ProjekatException(e.getMessage() + "ovdje je error", e);
         }
     }
 

@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.SignupController">
    <center>
@@ -40,23 +40,48 @@
               </ButtonBar>
               <VBox GridPane.rowSpan="2147483647">
                   <children>
-                      <Label text="IME">
-                          <opaqueInsets>
-                              <Insets />
-                          </opaqueInsets>
-                          <VBox.margin>
-                              <Insets left="30.0" right="10.0" top="10.0" />
-                          </VBox.margin>
-                      </Label>
-                      <TextField fx:id="txtFieldImeID">
-                          <opaqueInsets>
-                              <Insets />
-                          </opaqueInsets>
-                          <VBox.margin>
-                              <Insets bottom="10.0" left="30.0" right="30.0" />
-                          </VBox.margin>
-                      </TextField>
-                  <Label text="PREZIME">
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+                                  <Label text="IME">
+                                      <opaqueInsets>
+                                          <Insets />
+                                      </opaqueInsets>
+                                  </Label>
+                                  <TextField fx:id="txtFieldImeID">
+                                      <opaqueInsets>
+                                          <Insets />
+                                      </opaqueInsets>
+                                  </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="PREZIME">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Label>
+                              <TextField fx:id="txtFieldPrezimeID">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label text="EMAIL">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -64,12 +89,12 @@
                         <Insets left="30.0" right="30.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="txtFieldPrezimeID">
+                  <TextField fx:id="txtFieldEmail">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets bottom="10.0" left="30.0" right="30.0" />
+                        <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                   </TextField>
                   <Label text="ADRESA">
