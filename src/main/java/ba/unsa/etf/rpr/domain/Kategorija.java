@@ -3,11 +3,9 @@ package ba.unsa.etf.rpr.domain;
 public class Kategorija implements Idable{
     private int id;
     private String name;
-    private String gender;
 
     public Kategorija(String name, String gender) {
         this.name = name;
-        this.gender = gender;
     }
 
     public Kategorija() {
@@ -32,13 +30,7 @@ public class Kategorija implements Idable{
         this.name = name;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+  
 
     @Override
     public boolean equals(Object o) {

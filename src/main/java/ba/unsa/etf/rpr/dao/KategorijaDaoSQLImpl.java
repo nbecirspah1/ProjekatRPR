@@ -25,7 +25,6 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
             Kategorija kat = new Kategorija();
             kat.setId(rs.getInt("id"));
             kat.setName(rs.getString("imeKategorije"));
-            kat.setGender(rs.getString("spol"));
             return kat;
         }catch(SQLException e){
             throw new ProjekatException(e.getMessage(), e);
@@ -37,7 +36,6 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
         row.put("imeKategorije", object.getName());
-        row.put("spol", object.getGender());
         return row;
     }
 }

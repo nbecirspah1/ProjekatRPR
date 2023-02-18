@@ -27,7 +27,7 @@
           <Button fx:id="skijeButton" mnemonicParsing="false" text="Skije" />
             <Button fx:id="pancericeButton" mnemonicParsing="false" text="Pancerice" />
             <Button fx:id="kacigeButton" mnemonicParsing="false" text="Ski kacige" />
-            <Button fx:id="naocaleButton" mnemonicParsing="false" text="Ski naočale" />
+            <Button fx:id="naocaleButton" mnemonicParsing="false" onAction="#onNaocaleClick" text="Ski naočale" />
         </items>
       </ToolBar>
    </top>

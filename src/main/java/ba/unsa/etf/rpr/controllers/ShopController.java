@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.business.ProizvodManager;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
@@ -60,5 +61,9 @@ public class ShopController {
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
 
         }
+    }
+
+    public void onNaocaleClick(ActionEvent actionEvent) {
+
     }
 }
