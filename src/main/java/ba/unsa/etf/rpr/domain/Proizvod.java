@@ -1,15 +1,19 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.InputStream;
+
 public class Proizvod implements Idable {
     private int id;
     private double cijena;
     private String opis;
-    private int kategorijaID;
+
+    private byte[] slika;
+
+
 
     public Proizvod(double cijena, String opis, int kategorijaID) {
         this.cijena = cijena;
         this.opis = opis;
-        this.kategorijaID = kategorijaID;
     }
 
     public Proizvod() {
@@ -42,13 +46,6 @@ public class Proizvod implements Idable {
         this.opis = opis;
     }
 
-    public int getKategorijaID() {
-        return kategorijaID;
-    }
-
-    public void setKategorijaID(int kategorijaID) {
-        this.kategorijaID = kategorijaID;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -56,5 +53,14 @@ public class Proizvod implements Idable {
         if (o == null || getClass() != o.getClass()) return false;
         Proizvod p = (Proizvod) o;
         return id == p.id;
+    }
+
+
+    public byte[] getSlika() {
+        return slika;
+    }
+
+    public void setSlika(byte[] slika) {
+        this.slika = slika;
     }
 }

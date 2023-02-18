@@ -13,6 +13,7 @@ ba\unsa\etf\rpr\dao\PlacanjeDao.class
 ba\unsa\etf\rpr\domain\Kategorija.class
 ba\unsa\etf\rpr\dao\Dao.class
 ba\unsa\etf\rpr\domain\ProizvodDetalji.class
+ba\unsa\etf\rpr\business\ProizvodManager.class
 ba\unsa\etf\rpr\domain\Idable.class
 ba\unsa\etf\rpr\dao\DaoFactory.class
 ba\unsa\etf\rpr\dao\ProizvodDetaljiDaoSQLImpl.class

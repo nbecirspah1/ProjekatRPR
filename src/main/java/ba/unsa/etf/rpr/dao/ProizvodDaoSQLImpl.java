@@ -5,6 +5,10 @@ import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -30,7 +34,21 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
             proizvod.setId(rs.getInt("id"));
             proizvod.setOpis(rs.getString("opisProizvoda"));
             proizvod.setCijena(rs.getDouble("cijena"));
-            proizvod.setKategorijaID(rs.getInt("kategorijaID"));
+         //   proizvod.setSlika(rs.getBinaryStream("slikaProizvoda"));
+            InputStream inputStream = rs.getBinaryStream("slikaProizvoda");
+            if (inputStream != null) {
+                try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+                    byte[] buffer = new byte[4096];
+                    int bytesRead = -1;
+                    while ((bytesRead = inputStream.read(buffer)) != -1) {
+                        outputStream.write(buffer, 0, bytesRead);
+                    }
+                    proizvod.setSlika(outputStream.toByteArray());
+                } catch (IOException e) {
+                    throw new ProjekatException("Error reading image data from database", e);
+                }
+            }
+            System.out.println("OVO JE KAO SLIKA " + proizvod.getSlika().length);
             return proizvod;
         } catch (SQLException e) {
             throw new ProjekatException(e.getMessage(), e);
@@ -43,8 +61,7 @@ public class ProizvodDaoSQLImpl extends AbstractDao<Proizvod> implements Proizvo
         row.put("id", object.getId());
         row.put("opisProizvoda", object.getOpis());
         row.put("cijena", object.getCijena());
-        row.put("kategorijaID", object.getKategorijaID());
-
+        row.put("slikaProizvoda", object.getSlika());
         return row;
     }
 
