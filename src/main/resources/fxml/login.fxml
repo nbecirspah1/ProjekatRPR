@@ -30,23 +30,7 @@
             </ImageView>
             <VBox GridPane.rowIndex="1">
                <children>
-                  <Label text="IME">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="imeID">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets left="30.0" right="30.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Label text="PREZIME">
+                  <Label text="EMAIL">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -54,7 +38,7 @@
                         <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="prezimeID">
+                  <TextField fx:id="emailID">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

@@ -6,20 +6,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class LoginController {
-    public Button OKDugme;
-    public TextField usernameID;
-    public TextField imeID;
-    public TextField prezimeID;
+
     public TextField passwordID;
     public Button buttonID;
+    public TextField emailID;
 
     private KupacManager manager = new KupacManager();
 
 
 
     public void onButtonClick(ActionEvent actionEvent) {
-        String ime = imeID.getText();
-        String prezime = prezimeID.getText();
+        String ime = emailID.getText();
         String password = passwordID.getText();
 
     }
