@@ -6,13 +6,18 @@ import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 import java.io.*;
@@ -32,6 +37,7 @@ public class ShopController {
 
     private String[] cijene = { "do 100 KM", "do 200 KM", "do 300 KM", "-"};
     private ProizvodManager manager = new ProizvodManager();
+    public static VBox vBox;
 
     @FXML
     public void initialize() throws ProjekatException {
@@ -71,6 +77,7 @@ public class ShopController {
 
                 }
             });
+
 
         }catch(ProjekatException e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
@@ -139,7 +146,7 @@ public class ShopController {
     public void dodavanjeProizvoda(List<Proizvod> proizvodi) {
         scrollPaneID.setVvalue(0.0);
         flowPaneID.getChildren().clear();
-       // choiceBoxID.setValue("-");
+
         for (Proizvod proizvod : proizvodi) {
 
             try {
@@ -175,12 +182,33 @@ public class ShopController {
 
 
                 flowPaneID.getChildren().add(vBox);
+
+                vBox.setOnMouseClicked(event ->{
+                    this.vBox = vBox;
+                    Parent newRoot = null;
+                    try {
+                        newRoot = FXMLLoader.load(getClass().getResource("/fxml/buyItem.fxml"));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow();
+                    stage.setTitle("Buy item");
+                    Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
+                    stage.getIcons().add(icon);
+                    Scene currentScene = stage.getScene();
+                    currentScene.setRoot(newRoot);
+                });
+
             }catch(Exception e){
                 new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
 
             }
         }
     }
+
+
+
 
 
 

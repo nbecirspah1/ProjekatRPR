@@ -11,6 +11,7 @@ ba\unsa\etf\rpr\controllers\SignupController.class
 ba\unsa\etf\rpr\domain\Kupac.class
 ba\unsa\etf\rpr\dao\PlacanjeDao.class
 ba\unsa\etf\rpr\domain\Kategorija.class
+ba\unsa\etf\rpr\controllers\BuyItemController.class
 ba\unsa\etf\rpr\dao\Dao.class
 ba\unsa\etf\rpr\domain\ProizvodDetalji.class
 ba\unsa\etf\rpr\business\ProizvodManager.class

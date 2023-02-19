@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane prefHeight="640.0" prefWidth="1024.0" stylesheets="@/css/shop.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ShopController">
+<BorderPane prefHeight="640.0" prefWidth="1024.0" stylesheets="@../css/shop.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ShopController">
    <center>
       <ScrollPane fx:id="scrollPaneID" fitToHeight="true" fitToWidth="true">
          <content>
@@ -32,7 +32,7 @@
             <Button fx:id="kacigeButton" mnemonicParsing="false" onAction="#onKacigeClick" text="Ski kacige" />
             <Button fx:id="naocaleButton" mnemonicParsing="false" onAction="#onNaocaleClick" text="Ski naočale" />
             <Label fx:id="labelaID" text="Cijena:" />
-            <ChoiceBox fx:id="choiceBoxID" prefWidth="120.0"  />
+            <ChoiceBox fx:id="choiceBoxID" prefWidth="120.0" />
         </items>
       </ToolBar>
    </top>

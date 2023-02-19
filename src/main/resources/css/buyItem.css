@@ -1,0 +1,33 @@
+#vBoxID {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #C0C0C0;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+#opisID {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+#cijenaID {
+    -fx-font-size: 14;
+    -fx-text-fill: #666666;
+}
+
+#toolBarID {
+           -fx-background-color: #1D3735;
+
+}
+#nazadID {
+    -fx-background-color: #1D3735;
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+    -fx-opacity: 0.7;
+}
+
+#nazadID:hover{
+    -fx-opacity: 1;
+}
