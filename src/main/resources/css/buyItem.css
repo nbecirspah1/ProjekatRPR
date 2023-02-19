@@ -1,3 +1,8 @@
+.root{
+           -fx-background-color: white;
+           /*#1D3735;*/
+}
+
 #vBoxID {
     -fx-background-color: #FFFFFF;
     -fx-border-color: #C0C0C0;
