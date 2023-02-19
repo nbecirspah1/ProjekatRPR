@@ -23,7 +23,6 @@ public class BuyItemController {
     public VBox firstVBoxID;
     public VBox secondVBOXID;
 
-    private ShopController shopController;
 
     private Proizvod proizvod;
 
