@@ -9,17 +9,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class BuyItemController {
-    public SplitPane splitPaneID;
+
+
+    public HBox HBoxID;
 
     @FXML
     public void initialize(){
-
-        splitPaneID.getItems().add(ShopController.vBox);
+        HBoxID.getChildren().add(ShopController.vBox);
     }
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
