@@ -41,15 +41,17 @@ public class LoginController {
         }
         else{
             SessionManager.getInstance().setKupacId(kupac.get(0).getId());
-            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
             Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.setTitle("Online shop");
+            Stage stageOld = (Stage) node.getScene().getWindow();
+            stageOld.close();
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+            stage.setTitle("Welcome!");
             Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
             stage.getIcons().add(icon);
-            Scene currentScene = stage.getScene();
-            currentScene.setRoot(newRoot);
-
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(true);
+            stage.show();
         }
     }
 }

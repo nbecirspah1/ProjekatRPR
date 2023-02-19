@@ -7,6 +7,7 @@ ba\unsa\etf\rpr\controllers\LoginController.class
 ba\unsa\etf\rpr\dao\ProizvodDetaljiDao.class
 ba\unsa\etf\rpr\App.class
 ba\unsa\etf\rpr\dao\KorpaDao.class
+ba\unsa\etf\rpr\business\SessionManager.class
 ba\unsa\etf\rpr\controllers\SignupController.class
 ba\unsa\etf\rpr\domain\Kupac.class
 ba\unsa\etf\rpr\dao\PlacanjeDao.class

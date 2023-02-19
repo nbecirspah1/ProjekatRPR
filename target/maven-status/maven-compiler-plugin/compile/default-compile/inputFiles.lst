@@ -1,6 +1,7 @@
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\LoginController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KorpaDao.java
+C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business\SessionManager.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business\KupacManager.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\domain\ProizvodDetalji.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\SignupController.java

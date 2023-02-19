@@ -78,5 +78,8 @@ public class KupacManager {
         return DaoFactory.kupacDao().getAll();
     }
 
+    public Kupac getByID(int id) throws ProjekatException{
+        return DaoFactory.kupacDao().getById(id);
+    }
 
 }

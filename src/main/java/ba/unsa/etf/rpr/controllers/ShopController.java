@@ -186,6 +186,7 @@ public class ShopController {
 
                 vBox.setOnMouseClicked(event ->{
                     this.vBox = vBox;
+                    SessionManager.getInstance().setProizvod(proizvod);
 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/buyItem.fxml"));
                     Parent newRoot = null;
@@ -196,7 +197,6 @@ public class ShopController {
                     }
                     BuyItemController controller = loader.getController();
                     controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
-                    SessionManager.getInstance().setProizvod(proizvod);
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.setTitle("Buy item");

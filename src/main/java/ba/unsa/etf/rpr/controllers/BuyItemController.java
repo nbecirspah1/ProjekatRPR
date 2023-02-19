@@ -1,12 +1,18 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.KupacManager;
 import ba.unsa.etf.rpr.business.SessionManager;
+import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.domain.Proizvod;
+import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
@@ -25,8 +31,26 @@ public class BuyItemController {
     public Label prezimeField;
     public Label adresaField;
     public Label brojTelField;
+    KupacManager manager = new KupacManager();
+    @FXML
+    public void initialize() throws ProjekatException {
+        int id = SessionManager.getInstance().getKupacId();
+        System.out.println("Ovo je id:" + id);
+        System.out.println("Ovo je proizvod" + SessionManager.getInstance().getProizvod().getOpis());
+        try{
+            Kupac k = manager.getByID(id);
+            imeField.setText(k.getName());
+            adresaField.setText(k.getSurname());
+            brojTelField.setText(k.getPhoneNumber());
 
 
+        }catch(ProjekatException e){
+            new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+
+        }
+
+
+    }
     public void onBackClick(ActionEvent actionEvent) throws IOException {
         SessionManager.getInstance().setProizvod(null);
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
