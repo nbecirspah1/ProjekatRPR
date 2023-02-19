@@ -51,4 +51,8 @@ public class BuyItemController {
     public void setProizvodID(Proizvod proizvod) {
         this.proizvod = proizvod;
     }
+
+    public Proizvod getProizvodID(){
+        return proizvod;
+    }
 }
