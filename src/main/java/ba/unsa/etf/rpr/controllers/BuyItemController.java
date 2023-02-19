@@ -26,14 +26,6 @@ public class BuyItemController {
 
     private Proizvod proizvod;
 
-   /* public BuyItemController(ShopController shopController) {
-        this.shopController = shopController;
-    }
-
-    @FXML
-    public void initialize(){
-        HBoxID.getChildren().addAll(shopController.getVBox());
-    }*/
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
