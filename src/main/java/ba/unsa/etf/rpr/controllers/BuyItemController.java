@@ -21,7 +21,6 @@ public class BuyItemController {
     public VBox secondVBOXID;
 
 
-    private Proizvod proizvod;
 
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
@@ -36,11 +35,5 @@ public class BuyItemController {
         currentScene.setRoot(newRoot);
     }
 
-    public void setProizvodID(Proizvod proizvod) {
-        this.proizvod = proizvod;
-    }
 
-    public Proizvod getProizvodID(){
-        return proizvod;
-    }
 }
