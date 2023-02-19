@@ -41,7 +41,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="Label" textFill="WHITE">
+                        <Label fx:id="imeField" text="Label" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
@@ -58,7 +58,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="Label" textFill="WHITE">
+                        <Label fx:id="prezimeField" text="Label" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
@@ -72,7 +72,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="Label" textFill="WHITE">
+                        <Label fx:id="adresaField" text="Label" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
@@ -86,7 +86,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="Label" textFill="WHITE">
+                        <Label fx:id="brojTelField" text="Label" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>

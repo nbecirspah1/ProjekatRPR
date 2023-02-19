@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,8 +21,10 @@ public class BuyItemController {
     public HBox HBoxID;
     public VBox firstVBoxID;
     public VBox secondVBOXID;
-
-
+    public Label imeField;
+    public Label prezimeField;
+    public Label adresaField;
+    public Label brojTelField;
 
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
