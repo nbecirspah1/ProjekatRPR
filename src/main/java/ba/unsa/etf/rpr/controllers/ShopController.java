@@ -195,6 +195,7 @@ public class ShopController {
                     }
                     BuyItemController controller = loader.getController();
                     controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
+                    controller.setProizvodID(proizvod);
 
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();

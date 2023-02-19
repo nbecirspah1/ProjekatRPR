@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +25,8 @@ public class BuyItemController {
 
     private ShopController shopController;
 
+    private Proizvod proizvod;
+
    /* public BuyItemController(ShopController shopController) {
         this.shopController = shopController;
     }
@@ -43,5 +46,9 @@ public class BuyItemController {
         stage.getIcons().add(icon);
         Scene currentScene = stage.getScene();
         currentScene.setRoot(newRoot);
+    }
+
+    public void setProizvodID(Proizvod proizvod) {
+        this.proizvod = proizvod;
     }
 }
