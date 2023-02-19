@@ -36,3 +36,8 @@
 #nazadID:hover{
     -fx-opacity: 1;
 }
+
+#firstVBoxID{
+           -fx-background-color: #1D3735;
+
+}
