@@ -30,7 +30,7 @@
                   <Label alignment="CENTER" text="VAŠI PODACI: " />
                </children>
             </VBox>
-            <VBox fx:id="secondVBOXID" prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="secondVBOXID" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
          </children>
       </HBox>
    </center>
