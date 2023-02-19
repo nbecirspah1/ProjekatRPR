@@ -31,6 +31,7 @@ public class BuyItemController {
     public Label prezimeField;
     public Label adresaField;
     public Label brojTelField;
+    public Label iznosLabel;
     KupacManager manager = new KupacManager();
     @FXML
     public void initialize() throws ProjekatException {
@@ -43,6 +44,7 @@ public class BuyItemController {
             prezimeField.setText(k.getSurname());
             adresaField.setText(k.getAdress());
             brojTelField.setText(k.getPhoneNumber());
+            iznosLabel.setText(Double.toString(SessionManager.getInstance().getProizvod().getCijena()) + " KM");
 
 
         }catch(ProjekatException e){
