@@ -24,6 +24,8 @@ import javax.management.Notification;
 import java.io.IOException;
 import java.time.Duration;
 
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
 public class BuyItemController {
 
 
@@ -85,8 +87,15 @@ public class BuyItemController {
         }
     }
 
-    public void onKupiClicked(ActionEvent actionEvent) {
-
+    public void onKupiClicked(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/uspjesnaKupovina.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Uspješna kupovina");
+        Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
+        stage.getIcons().add(icon);
+        stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        stage.setResizable(false);
+        stage.show();
 
 
     }
