@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,7 @@ public class BuyItemController {
 
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
+        SessionManager.getInstance().setProizvod(null);
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
 
         Node node = (Node) actionEvent.getSource();

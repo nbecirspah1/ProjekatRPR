@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.ProizvodManager;
+import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
@@ -195,8 +196,7 @@ public class ShopController {
                     }
                     BuyItemController controller = loader.getController();
                     controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
-                    controller.setProizvodID(proizvod);
-
+                    SessionManager.getInstance().setProizvod(proizvod);
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.setTitle("Buy item");

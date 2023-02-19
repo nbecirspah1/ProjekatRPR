@@ -5,7 +5,7 @@ import ba.unsa.etf.rpr.domain.Proizvod;
 public class SessionManager {
 
         private static SessionManager instance;
-        private String kupacId;
+        private Integer kupacId;
         private Proizvod proizvod;
         private SessionManager() {}
 
@@ -16,16 +16,17 @@ public class SessionManager {
             return instance;
         }
 
-        public String getKupacId() {
+        public Integer getKupacId() {
             return kupacId;
         }
 
-        public void setKupacId(String kupacId) {
+        public void setKupacId(Integer kupacId) {
             this.kupacId = kupacId;
         }
 
         public void clearSession() {
             kupacId = null;
+            proizvod = null;
         }
 
     public Proizvod getProizvod() {

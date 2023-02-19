@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.KupacManager;
+import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
@@ -39,7 +40,7 @@ public class LoginController {
 
         }
         else{
-
+            SessionManager.getInstance().setKupacId(kupac.get(0).getId());
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
             Node node = (Node) actionEvent.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
