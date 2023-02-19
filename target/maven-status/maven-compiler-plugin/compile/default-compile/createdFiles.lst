@@ -5,6 +5,7 @@ ba\unsa\etf\rpr\App.class
 ba\unsa\etf\rpr\dao\KorpaDao.class
 ba\unsa\etf\rpr\controllers\SignupController.class
 ba\unsa\etf\rpr\domain\Kategorija.class
+ba\unsa\etf\rpr\controllers\UspjesnaKupovinaController.class
 ba\unsa\etf\rpr\dao\DaoFactory.class
 ba\unsa\etf\rpr\dao\AbstractDao$1.class
 ba\unsa\etf\rpr\domain\Proizvod.class
