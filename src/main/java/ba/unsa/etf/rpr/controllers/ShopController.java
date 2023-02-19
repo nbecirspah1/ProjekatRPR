@@ -37,7 +37,7 @@ public class ShopController {
 
     private String[] cijene = { "do 100 KM", "do 200 KM", "do 300 KM", "-"};
     private ProizvodManager manager = new ProizvodManager();
-    public static VBox vBox;
+    private VBox vBox;
 
     @FXML
     public void initialize() throws ProjekatException {
@@ -185,12 +185,17 @@ public class ShopController {
 
                 vBox.setOnMouseClicked(event ->{
                     this.vBox = vBox;
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/buyItem.fxml"));
                     Parent newRoot = null;
                     try {
-                        newRoot = FXMLLoader.load(getClass().getResource("/fxml/buyItem.fxml"));
+                        newRoot = loader.load();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
+                    BuyItemController controller = loader.getController();
+                    controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
+
                     Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.setTitle("Buy item");
@@ -208,9 +213,7 @@ public class ShopController {
     }
 
 
-
-
-
-
-
+    public VBox getVBox() {
+        return vBox;
+    }
 }

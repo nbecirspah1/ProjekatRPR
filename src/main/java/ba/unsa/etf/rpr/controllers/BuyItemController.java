@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,11 +19,19 @@ public class BuyItemController {
 
 
     public HBox HBoxID;
+    public VBox firstVBoxID;
+    public VBox secondVBOXID;
+
+    private ShopController shopController;
+
+   /* public BuyItemController(ShopController shopController) {
+        this.shopController = shopController;
+    }
 
     @FXML
     public void initialize(){
-        HBoxID.getChildren().add(ShopController.vBox);
-    }
+        HBoxID.getChildren().addAll(shopController.getVBox());
+    }*/
 
     public void onBackClick(ActionEvent actionEvent) throws IOException {
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
