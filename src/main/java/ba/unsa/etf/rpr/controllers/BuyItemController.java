@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
@@ -32,6 +33,8 @@ public class BuyItemController {
     public Label adresaField;
     public Label brojTelField;
     public Label iznosLabel;
+    public CheckBox checkBoxGotovina;
+    public CheckBox checkBoxKartica;
     KupacManager manager = new KupacManager();
     @FXML
     public void initialize() throws ProjekatException {
@@ -68,4 +71,15 @@ public class BuyItemController {
     }
 
 
+    public void onKarticaClicked(ActionEvent actionEvent) {
+        if (checkBoxGotovina.isSelected()) {
+            checkBoxGotovina.setSelected(false);
+        }
+    }
+
+    public void onGotovinaClicked(ActionEvent actionEvent) {
+        if (checkBoxKartica.isSelected()){
+            checkBoxKartica.setSelected(false);
+        }
+    }
 }
