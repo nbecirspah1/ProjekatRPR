@@ -35,29 +35,97 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <FlowPane alignment="CENTER">
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
                      <children>
-                        <Label text="Ime: " textFill="WHITE" />
-                        <Label fx:id="imeField" text="Label" textFill="WHITE" />
+                        <Label text="Ime: " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="imeField" text="Label" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </VBox.margin>
                   </FlowPane>
-                  <FlowPane alignment="CENTER">
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
                      <children>
-                        <Label text="Prezime:" textFill="WHITE" />
-                        <Label fx:id="prezimeField" text="Label" textFill="WHITE" />
+                        <Label text="Prezime:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prezimeField" text="Label" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </VBox.margin>
                   </FlowPane>
-                  <FlowPane alignment="CENTER">
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
                      <children>
-                        <Label text="Adresa:" textFill="WHITE" />
-                        <Label fx:id="adresaField" text="Label" textFill="WHITE" />
+                        <Label text="Adresa:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="adresaField" text="Label" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </VBox.margin>
                   </FlowPane>
-                  <FlowPane alignment="CENTER">
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
                      <children>
-                        <Label text="brojTelefona:" textFill="WHITE" />
-                        <Label fx:id="brojTelField" text="Label" textFill="WHITE" />
+                        <Label text="brojTelefona:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="brojTelField" text="Label" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </VBox.margin>
                   </FlowPane>
                </children>
                <HBox.margin>
