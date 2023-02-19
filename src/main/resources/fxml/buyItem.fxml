@@ -30,8 +30,18 @@
                   </ImageView>
                   <Label alignment="CENTER" text="VAŠI PODACI: " />
                </children>
+               <HBox.margin>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="100.0" right="100.0" />
+               </padding>
             </VBox>
-            <VBox fx:id="secondVBOXID" alignment="CENTER" />
+            <VBox fx:id="secondVBOXID" alignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </HBox.margin>
+            </VBox>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
