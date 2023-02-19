@@ -22,5 +22,15 @@ public class BuyItemController {
         splitPaneID.getItems().add(ShopController.vBox);
     }
 
+    public void onBackClick(ActionEvent actionEvent) throws IOException {
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
 
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("Buy item");
+        Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
+        stage.getIcons().add(icon);
+        Scene currentScene = stage.getScene();
+        currentScene.setRoot(newRoot);
+    }
 }
