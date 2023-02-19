@@ -35,7 +35,6 @@ public class SignupController {
             kupac.setPhoneNumber(brojTel);
             kupac.setPassword(sifra);
             kupac.setEmail(email);
-
             try {
                 manager.add(kupac);
 
