@@ -99,7 +99,7 @@ public class BuyItemController {
             }
         }
         else{
-            i=1;
+
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/notification.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Uspješna kupovina");

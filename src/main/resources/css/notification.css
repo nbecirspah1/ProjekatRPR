@@ -1,0 +1,10 @@
+.root{
+    -fx-background-color: /*#3A7270;*/#1D3735;
+}
+
+#NEButton, #DAButton{
+    -fx-background-color: #6EB3AE;
+}
+#NEButton:hover, #DAButton:hover{
+    -fx-background-color: rgba(110, 179, 174, 0.75);
+}
