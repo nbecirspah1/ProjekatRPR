@@ -40,7 +40,8 @@ public class BuyItemController {
         try{
             Kupac k = manager.getByID(id);
             imeField.setText(k.getName());
-            adresaField.setText(k.getSurname());
+            prezimeField.setText(k.getSurname());
+            adresaField.setText(k.getAdress());
             brojTelField.setText(k.getPhoneNumber());
 
 
