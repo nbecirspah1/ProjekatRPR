@@ -130,6 +130,29 @@
                      </VBox.margin>
                   </FlowPane>
                   <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
+                     <children>
+                        <Label text="Iznos:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="brojTelField1" text="Label" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="100.0" top="5.0" />
+                     </VBox.margin>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
                      <VBox.margin>
                         <Insets left="100.0" top="30.0" />
                      </VBox.margin>
