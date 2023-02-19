@@ -20,7 +20,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.management.Notification;
 import java.io.IOException;
+import java.time.Duration;
 
 public class BuyItemController {
 
@@ -81,5 +83,11 @@ public class BuyItemController {
         if (checkBoxKartica.isSelected()){
             checkBoxKartica.setSelected(false);
         }
+    }
+
+    public void onKupiClicked(ActionEvent actionEvent) {
+
+
+
     }
 }
