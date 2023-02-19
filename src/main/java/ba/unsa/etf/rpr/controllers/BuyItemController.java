@@ -39,6 +39,7 @@ public class BuyItemController {
     public Button buyButton;
     public Label errorLabel;
     KupacManager manager = new KupacManager();
+    private int i=0;
     @FXML
     public void initialize() throws ProjekatException {
         errorLabel.setText("");
@@ -94,11 +95,12 @@ public class BuyItemController {
     public void onKupiClicked(ActionEvent actionEvent) throws IOException {
         if(!checkBoxKartica.isSelected() && !checkBoxGotovina.isSelected()){
             if(errorLabel.getText() == ""){
-                errorLabel.setText("Niste odabrali način kupovine");
+                errorLabel.setText("Niste odabrali način plaćanja");
             }
         }
         else{
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/uspjesnaKupovina.fxml"));
+            i=1;
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/notification.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Uspješna kupovina");
             Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
