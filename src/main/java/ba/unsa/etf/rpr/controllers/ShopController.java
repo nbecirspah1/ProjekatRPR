@@ -178,7 +178,10 @@ public class ShopController {
                 });
 
                 vBox.setOnMouseExited(event -> {
-                    vBox.getChildren().remove(vBox.getChildren().size() - 1);
+                    if(vBox.getChildren().size()!=0){
+                        vBox.getChildren().remove(vBox.getChildren().size() - 1);
+
+                    }
                 });
 
 
