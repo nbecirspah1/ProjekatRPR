@@ -5,16 +5,15 @@ import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -29,10 +28,38 @@ public class SignupController {
     public TextField txtFieldImeID;
     public TextField txtFieldAdresa;
     public TextField txtFieldEmail;
+    public Label errorLabel;
     private KupacManager manager = new KupacManager();
+
+    @FXML
+    void initialize(){
+        txtFieldImeID.getStyleClass().add("poljeJeIspravno");
+        txtFieldImeID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if (n.toString() == null || n.toString().length() <= 2 || !n.toString().matches("^[a-zA-Z]+$")) {
+                    txtFieldImeID.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldImeID.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldImeID.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldImeID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
+
+
+    }
 
 
     public void actionSubmit(ActionEvent actionEvent) throws ProjekatException {
+
+
+
         String ime = txtFieldImeID.getText();
         String prezime = txtFieldPrezimeID.getText();
         String adresa = txtFieldAdresa.getText();

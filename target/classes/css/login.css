@@ -3,8 +3,18 @@ VBox > Label {
   -fx-text-fill: white;
 }
 
+.poljeNijeIspravno{
+        -fx-background-color: #dd5353;/*rgba(255, 255, 255, 0.5);*/
+         -fx-border-color: #ccc;
+         -fx-border-radius: 20px;
+          -fx-background-radius: 20px;
+         -fx-border-width: 1;
+         -fx-control-inner-background: #dd5353;
+
+}
+
 /* Apply to the TextField elements inside the VBox */
-VBox > TextField, #passwordID, #txtFieldSifraID {
+.poljeJeIspravno {
   -fx-background-color: rgba(255, 255, 255, 0.5);
   -fx-border-color: #ccc;
   -fx-border-radius: 20px;

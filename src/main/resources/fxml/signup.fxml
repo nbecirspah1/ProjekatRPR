@@ -155,6 +155,7 @@
                         <HBox alignment="CENTER">
                            <children>
                                   <Button fx:id="buttonID" defaultButton="true" mnemonicParsing="false" onAction="#actionSubmit" text="REGISTRUJ SE" textAlignment="CENTER" textFill="WHITE" />
+                              <Label fx:id="errorLabel" text="Label" textFill="#e91f1f" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER">
