@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -146,14 +147,30 @@
                               <Insets bottom="10.0" left="30.0" right="30.0" />
                           </VBox.margin>
                       </PasswordField>
-                  <HBox alignment="CENTER">
+                  <VBox>
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" top="30.0" />
                      </VBox.margin>
                      <children>
-                            <Button fx:id="buttonID" defaultButton="true" mnemonicParsing="false" onAction="#actionSubmit" text="REGISTRUJ SE" textAlignment="CENTER" textFill="WHITE" />
+                        <HBox alignment="CENTER">
+                           <children>
+                                  <Button fx:id="buttonID" defaultButton="true" mnemonicParsing="false" onAction="#actionSubmit" text="REGISTRUJ SE" textAlignment="CENTER" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </ProgressBar>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
                   </children>
               </VBox>
           </children>
