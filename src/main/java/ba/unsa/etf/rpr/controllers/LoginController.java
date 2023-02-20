@@ -39,6 +39,10 @@ public class LoginController {
             new Alert(Alert.AlertType.NONE, "Ne postoji account sa ovim emailom!", ButtonType.OK).show();
 
         }
+        else if(!password.equals(kupac.get(0).getPassword())){
+            new Alert(Alert.AlertType.NONE, "Šifra nije validna. Pokušajte ponovo.", ButtonType.OK).show();
+
+        }
         else{
             SessionManager.getInstance().setKupacId(kupac.get(0).getId());
             Node node = (Node) actionEvent.getSource();

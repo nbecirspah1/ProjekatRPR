@@ -1,23 +1,6 @@
-
-
-
-#SignInButton, #SignUpButton{
-
-          -fx-background-color: transparent;
-          -fx-background-radius: 0;
-          -fx-padding: 0;
-     }
-
-
-#SignInButton:hover, #SignUpButton:hover{
-              filter: brightness(75%);
-              -fx-text-fill: #b3b3b3;
-          -fx-background-radius: 0;
-          -fx-padding: 0;
-}
 /* Apply to the Label elements inside the VBox */
 VBox > Label {
-  -fx-text-fill: #333;
+  -fx-text-fill: white;
 }
 
 /* Apply to the TextField elements inside the VBox */
@@ -31,29 +14,23 @@ VBox > TextField {
 }
 
 /* Apply to the Button element inside the VBox */
-VBox > Button {
-  -fx-text-fill: #fff;
+#buttonID {
+
   -fx-border-width: 1;
   -fx-cursor: hand;
   -fx-border-radius: 20px;
      -fx-background-radius: 20px;
-       -fx-background-color: darkslategrey;
-       -fx-border-color: darkslategrey;
+       -fx-background-color: gray;
+       -fx-border-color: gray;
 }
 
 /* Apply to the Button when hovered */
-VBox > Button:hover {
+#buttonID:hover {
+    -fx-background-color: rgba(110, 179, 174, 0.75);
 
-       -fx-background-color: #1D3735;
-       -fx-border-color: #1D3735;
+       -fx-border-color: rgba(110, 179, 174, 0.75);
 }
 
-/* Apply to the Button when pressed */
-VBox > Button:pressed {
-              -fx-filter: brightness(75%);
 
-  /*-fx-background-color: #1f4422;
-  -fx-border-color: #1f4422;*/
-}
 
 
