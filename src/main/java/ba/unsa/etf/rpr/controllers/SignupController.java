@@ -34,6 +34,9 @@ public class SignupController {
     @FXML
     void initialize(){
         txtFieldImeID.getStyleClass().add("poljeJeIspravno");
+        txtFieldPrezimeID.getStyleClass().add("poljeJeIspravno");
+        txtFieldBrTelID.getStyleClass().add("poljeJeIspravno");
+        txtFieldAdresa.getStyleClass().add("poljeJeIspravno");
         txtFieldImeID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -52,6 +55,59 @@ public class SignupController {
             }
         });
 
+        txtFieldPrezimeID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if (n.toString() == null || n.toString().length() <= 2 || !n.toString().matches("^[a-zA-Z]+$")) {
+                    txtFieldPrezimeID.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldPrezimeID.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldPrezimeID.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldPrezimeID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
+
+        txtFieldAdresa.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if (n == null || n.length() <= 2) {
+                    txtFieldAdresa.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldAdresa.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldAdresa.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldAdresa.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
+
+        txtFieldBrTelID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if ( n.toString() == null || !n.toString().matches("^\\+387[0-9]{9}$")) {
+                    txtFieldBrTelID.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldBrTelID.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldBrTelID.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldBrTelID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
 
     }
 

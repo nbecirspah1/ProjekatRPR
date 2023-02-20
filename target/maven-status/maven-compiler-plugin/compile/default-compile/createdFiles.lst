@@ -1,3 +1,4 @@
+ba\unsa\etf\rpr\controllers\SignupController$3.class
 ba\unsa\etf\rpr\business\PlacanjeManager.class
 ba\unsa\etf\rpr\business\ProizvodDetaljiManager.class
 ba\unsa\etf\rpr\domain\Korpa.class
@@ -18,6 +19,7 @@ ba\unsa\etf\rpr\controllers\ShopController.class
 ba\unsa\etf\rpr\business\KupacManager.class
 ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\KategorijaDao.class
+ba\unsa\etf\rpr\controllers\SignupController$2.class
 ba\unsa\etf\rpr\dao\KupacDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\ProizvodDao.class
 ba\unsa\etf\rpr\dao\PlacanjeDaoSQLImpl.class

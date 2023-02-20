@@ -64,6 +64,7 @@ public class KupacManager {
         validateKupacPhoneNumber(kupac.getPhoneNumber());
         validateKupacEmail(kupac.getEmail());
 
+
         try{
 
             return DaoFactory.kupacDao().add(kupac);
