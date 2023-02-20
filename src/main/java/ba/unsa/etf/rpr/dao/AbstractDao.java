@@ -112,7 +112,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
         StringBuilder builder = new StringBuilder();
-        builder.append("UPDATE").append(this.imeTabele);
+        builder.append("UPDATE ").append(this.imeTabele);
         builder.append(" SET ").append(updateColumns);
         builder.append(" WHERE id = ?");
 

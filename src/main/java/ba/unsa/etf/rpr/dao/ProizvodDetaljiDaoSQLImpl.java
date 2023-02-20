@@ -55,7 +55,7 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
 
     @Override
     public ProizvodDetalji getByProizvodIDAndSize(int proizvodID, String velicina) throws ProjekatException {
-        return executeQueryUnique("SELECT * FROM freedb_rprProjekaBaza.ProizvodDetalji WHERE proizvodID = ? AND velicina LIKE ?", new Object[]{proizvodID, velicina});
+        return executeQueryUnique("SELECT * FROM freedb_rprProjekaBaza.ProizvodDetalji WHERE proizvodID = ? AND velicina = ?", new Object[]{proizvodID, velicina});
 
     }
 }

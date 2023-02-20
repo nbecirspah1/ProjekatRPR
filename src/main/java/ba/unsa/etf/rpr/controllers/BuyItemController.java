@@ -51,7 +51,7 @@ public class BuyItemController {
 
 
         choiceBoxID.setOnAction(event -> {
-
+            errorLabel.setText("");
             String velicina = choiceBoxID.getValue().toString();
             SessionManager.getInstance().setVelicina(velicina);
         });
@@ -113,7 +113,7 @@ public class BuyItemController {
                 errorLabel.setText("Niste odabrali način plaćanja");
             }
         }
-        else if(choiceBoxID.getItems().size() == 0){
+        else if(choiceBoxID.getValue() == null){
             errorLabel.setText("Niste odabrali veličinu");
         }
         else{
