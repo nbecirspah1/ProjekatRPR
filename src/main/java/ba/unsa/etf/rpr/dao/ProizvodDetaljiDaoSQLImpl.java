@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -44,5 +45,11 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
         row.put("proizvodID", object.getProizvodID());
 
         return row;
+    }
+
+    @Override
+    public List<ProizvodDetalji> getByProizvodID(int proizvodID) throws ProjekatException {
+        return executeQuery("SELECT * FROM freedb_rprProjekaBaza.ProizvodDetalji WHERE proizvodID = ?", new Object[]{proizvodID});
+
     }
 }
