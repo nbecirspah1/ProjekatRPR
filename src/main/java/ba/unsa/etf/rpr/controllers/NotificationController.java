@@ -31,10 +31,17 @@ public class NotificationController {
     public void DAClick(ActionEvent actionEvent) throws IOException, ProjekatException {
         int proizvodID = SessionManager.getInstance().getProizvod().getId();
         String velicina = SessionManager.getInstance().getVelicina();
-        ProizvodDetalji proizvodDetalji = managerProizvod.getByProizvodIDAndSize(proizvodID, velicina);
+        ProizvodDetalji proizvodDetalji = null;
+        try{
+            proizvodDetalji = managerProizvod.getByProizvodIDAndSize(proizvodID, velicina);
+
+        }catch(ProjekatException e){
+            new Alert(Alert.AlertType.NONE, "Nema ovog proizvoda na stanju", ButtonType.OK).show();
+
+        }
 
         int kolicina = proizvodDetalji.getStockLevel();
-        if(kolicina == 0){
+        if(kolicina == 0 ){
             new Alert(Alert.AlertType.NONE, "Nema ovog proizvoda na stanju", ButtonType.OK).show();
 
         }else{
