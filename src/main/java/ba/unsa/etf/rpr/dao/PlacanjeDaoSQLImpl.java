@@ -26,9 +26,10 @@ public class PlacanjeDaoSQLImpl extends AbstractDao<Placanje> implements Placanj
         try {
             Placanje placanje = new Placanje();
             placanje.setId(rs.getInt("id"));
-            placanje.setKorpaID(rs.getInt("korpaID"));
             placanje.setPaymentDate(rs.getDate("DatumPlacanja"));
             placanje.setPaymentMethod(rs.getString("NacinPlacanja"));
+            placanje.setKupacID(rs.getInt("kupacID"));
+            placanje.setProizvodID(rs.getInt("proizvodID"));
             return placanje;
         }catch(SQLException e){
             throw  new ProjekatException(e.getMessage(), e);
@@ -39,9 +40,10 @@ public class PlacanjeDaoSQLImpl extends AbstractDao<Placanje> implements Placanj
     public Map<String, Object> object2row (Placanje object){
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
-        row.put("korpaID", object.getKorpaID());
         row.put("DatumPlacanja", object.getPaymentDate());
         row.put("NacinPlacanja", object.getPaymentMethod());
+        row.put("kupacID", object.getKupacID());
+        row.put("proizvodID", object.getProizvodID());
         return row;
     }
 
