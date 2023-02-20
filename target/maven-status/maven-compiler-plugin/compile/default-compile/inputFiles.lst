@@ -28,6 +28,7 @@ C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\PlacanjeDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\DaoFactory.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\ProizvodDetaljiDaoSQLImpl.java
+C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business\ProizvodDetaljiManager.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\ShopController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\NotificationController.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\controllers\BuyItemController.java
