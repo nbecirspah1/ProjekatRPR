@@ -35,6 +35,8 @@ public class NotificationController {
         placanje.setKupacID(kupacID);
         manager.add(placanje);
 
+
+
         Node node = (Node) actionEvent.getSource();
         Stage stageOld = (Stage) node.getScene().getWindow();
         stageOld.close();

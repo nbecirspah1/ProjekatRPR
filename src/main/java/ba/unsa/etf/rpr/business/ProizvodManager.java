@@ -33,4 +33,6 @@ public class ProizvodManager {
         Kategorija kategorijaID = getIDKategorije(kategorija);
         return DaoFactory.proizvodDao().searchByPriceAndCateogry(cijena, kategorijaID);
     }
+
+
 }
