@@ -7,6 +7,8 @@ public class SessionManager {
         private static SessionManager instance;
         private Integer kupacId;
         private Proizvod proizvod;
+
+        private String nacinPlacanja;
         private SessionManager() {}
 
         public static SessionManager getInstance() {
@@ -35,5 +37,13 @@ public class SessionManager {
 
     public void setProizvod(Proizvod proizvod) {
         this.proizvod = proizvod;
+    }
+
+    public String getNacinPlacanja() {
+        return nacinPlacanja;
+    }
+
+    public void setNacinPlacanja(String nacinPlacanja) {
+        this.nacinPlacanja = nacinPlacanja;
     }
 }
