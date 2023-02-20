@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -22,7 +23,7 @@ import java.io.IOException;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class SignupController {
-    public TextField txtFieldSifraID;
+    public PasswordField txtFieldSifraID;
     public TextField txtFieldBrTelID;
     public TextField txtFieldPrezimeID;
     public TextField txtFieldImeID;

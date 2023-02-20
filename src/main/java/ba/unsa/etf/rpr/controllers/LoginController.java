@@ -9,10 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -23,7 +20,7 @@ import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class LoginController {
 
-    public TextField passwordID;
+    public PasswordField passwordID;
     public Button buttonID;
     public TextField emailID;
 
