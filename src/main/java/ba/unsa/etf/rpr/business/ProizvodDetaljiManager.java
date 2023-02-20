@@ -7,7 +7,11 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
 public class ProizvodDetaljiManager {
 
-    ProizvodDetalji getByID(int proizvodID) throws ProjekatException {
+    public ProizvodDetalji getByID(int proizvodID) throws ProjekatException {
         return DaoFactory.proizvodDetaljiDao().getById(proizvodID);
+    }
+
+    public ProizvodDetalji update(ProizvodDetalji item) throws ProjekatException{
+        return DaoFactory.proizvodDetaljiDao().update(item);
     }
 }

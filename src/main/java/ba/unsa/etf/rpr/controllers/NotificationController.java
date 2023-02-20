@@ -1,8 +1,10 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.PlacanjeManager;
+import ba.unsa.etf.rpr.business.ProizvodDetaljiManager;
 import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Placanje;
+import ba.unsa.etf.rpr.domain.ProizvodDetalji;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +24,16 @@ import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 public class NotificationController {
 
     PlacanjeManager manager = new PlacanjeManager();
+    ProizvodDetaljiManager managerProizvod = new ProizvodDetaljiManager();
     public void DAClick(ActionEvent actionEvent) throws IOException, ProjekatException {
         LocalDate datumPlacanja = LocalDate.now();
         Date date = Date.from(datumPlacanja.atStartOfDay(ZoneId.systemDefault()).toInstant());
         String nacinPlacanja = SessionManager.getInstance().getNacinPlacanja();
         int proizvodID = SessionManager.getInstance().getProizvod().getId();
         int kupacID = SessionManager.getInstance().getKupacId();
+
+        ProizvodDetalji proizvodDetalji = managerProizvod.getByID(proizvodID);
+
         Placanje placanje = new Placanje();
         placanje.setPaymentDate(date);
         placanje.setPaymentMethod(nacinPlacanja);
