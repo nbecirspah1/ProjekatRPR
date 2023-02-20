@@ -9,7 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class ONamaController {
     public void onBackClick(ActionEvent actionEvent) throws IOException {
@@ -24,4 +27,20 @@ public class ONamaController {
         currentScene.setRoot(newRoot);
     }
 
+    public void onFbButtonClick(ActionEvent actionEvent) throws IOException, URISyntaxException {
+        // Create a URI object for the web page you want to open
+        URI uri = new URI("https://c2.etf.unsa.ba/course/index.php?categoryid=20");
+
+        // Check if the Desktop class is supported on the current platform
+        if (Desktop.isDesktopSupported()) {
+            // Get the Desktop object
+            Desktop desktop = Desktop.getDesktop();
+
+            // Check if the URI scheme is supported by the Desktop class
+            if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                // Open the web page in the default system browser
+                desktop.browse(uri);
+            }
+        }
+    }
 }

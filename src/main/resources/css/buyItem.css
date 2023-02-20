@@ -79,3 +79,11 @@
 #choiceBoxID{
     -fx-text-fill: #1D3735;
 }
+#igButton, #fbButton{
+        -fx-background-color: rgba(255, 255, 255);
+
+}
+#igButton:hover, #fbButton:hover{
+        -fx-background-color: #6EB3AE;/*rgba(255, 255, 255, 0.25);*/
+
+}
