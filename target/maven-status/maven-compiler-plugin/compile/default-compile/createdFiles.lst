@@ -1,4 +1,5 @@
 ba\unsa\etf\rpr\business\PlacanjeManager.class
+ba\unsa\etf\rpr\business\ProizvodDetaljiManager.class
 ba\unsa\etf\rpr\domain\Korpa.class
 ba\unsa\etf\rpr\domain\Placanje.class
 ba\unsa\etf\rpr\dao\ProizvodDetaljiDao.class

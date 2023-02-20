@@ -39,7 +39,7 @@ public class NotificationController {
 
         }else{
             kolicina = kolicina -1;
-            proizvodDetalji.setStockLevel(kolicina);
+         //   proizvodDetalji.setStockLevel(kolicina);
 
             LocalDate datumPlacanja = LocalDate.now();
             Date date = Date.from(datumPlacanja.atStartOfDay(ZoneId.systemDefault()).toInstant());
