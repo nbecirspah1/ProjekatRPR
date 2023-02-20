@@ -217,4 +217,7 @@ public class ShopController {
     public VBox getVBox() {
         return vBox;
     }
+
+    public void onONamaClick(ActionEvent actionEvent) {
+    }
 }

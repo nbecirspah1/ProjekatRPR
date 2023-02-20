@@ -31,6 +31,7 @@
             <Button fx:id="pancericeButton" mnemonicParsing="false" onAction="#onPancericeClick" text="Pancerice" />
             <Button fx:id="kacigeButton" mnemonicParsing="false" onAction="#onKacigeClick" text="Ski kacige" />
             <Button fx:id="naocaleButton" mnemonicParsing="false" onAction="#onNaocaleClick" text="Ski naočale" />
+            <Button fx:id="oNamaButton" mnemonicParsing="false" onAction="#onONamaClick" text="O nama" />
             <Label fx:id="labelaID" text="Cijena:" />
             <ChoiceBox fx:id="choiceBoxID" prefWidth="120.0" />
         </items>

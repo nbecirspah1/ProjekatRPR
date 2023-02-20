@@ -27,14 +27,14 @@
 
 }
 
-#skijeButton, #pancericeButton, #kacigeButton, #naocaleButton, #sveButton, #labelaID {
+#skijeButton, #pancericeButton, #kacigeButton, #naocaleButton, #sveButton, #labelaID, #oNamaButton {
     -fx-background-color: #1D3735;
     -fx-background-radius: 5;
     -fx-text-fill: white;
     -fx-opacity: 0.7;
 }
 
-#vBoxID:hover, #skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover, #sveButton:hover {
+#vBoxID:hover, #skijeButton:hover, #pancericeButton:hover, #kacigeButton:hover, #naocaleButton:hover, #sveButton:hover, #oNamaButton:hover {
     -fx-opacity: 1;
 }
 
