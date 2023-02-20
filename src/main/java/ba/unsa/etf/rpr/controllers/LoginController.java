@@ -4,6 +4,8 @@ import ba.unsa.etf.rpr.business.KupacManager;
 import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,15 +35,45 @@ public class LoginController {
     void initialize(){
         errorEmail.setText("");
         errorPassword.setText("");
+        emailID.getStyleClass().add("poljeJeIspravno");
+        passwordID.getStyleClass().add("poljeJeIspravno");
+
 
         emailID.textProperty().addListener((observable, oldValue, newValue) ->{
             errorEmail.setText("");
             errorPassword.setText("");
+
+            if ( newValue.length() < 8  || !newValue.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+                emailID.getStyleClass().removeAll("poljeJeIspravno");
+                emailID.getStyleClass().add("poljeNijeIspravno");
+
+            } else {
+                emailID.getStyleClass().removeAll("poljeNijeIspravno");
+                emailID.getStyleClass().add("poljeJeIspravno");
+
+
+            }
         });
 
         passwordID.textProperty().addListener((observable, oldValue, newValue) ->{
             errorEmail.setText("");
             errorPassword.setText("");
+
+             //   errorLabel.setText("");
+
+                if ( newValue.length() < 8) {
+                    passwordID.getStyleClass().removeAll("poljeJeIspravno");
+                    passwordID.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    passwordID.getStyleClass().removeAll("poljeNijeIspravno");
+                    passwordID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+
         });
     }
 
