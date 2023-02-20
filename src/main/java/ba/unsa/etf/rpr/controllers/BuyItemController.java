@@ -82,6 +82,7 @@ public class BuyItemController {
             checkBoxGotovina.setSelected(false);
         }
         errorLabel.setText("");
+        SessionManager.getInstance().setNacinPlacanja("karticno placanje");
     }
 
     public void onGotovinaClicked(ActionEvent actionEvent) {
@@ -89,6 +90,8 @@ public class BuyItemController {
             checkBoxKartica.setSelected(false);
         }
         errorLabel.setText("");
+        SessionManager.getInstance().setNacinPlacanja("gotovina");
+
 
     }
 
