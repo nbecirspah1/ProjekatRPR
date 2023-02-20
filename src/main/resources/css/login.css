@@ -2,6 +2,10 @@
 VBox > Label {
   -fx-text-fill: white;
 }
+#errorLabel{
+  -fx-text-fill: #dd5353;
+
+}
 
 .poljeNijeIspravno{
         -fx-background-color: #dd5353;/*rgba(255, 255, 255, 0.5);*/

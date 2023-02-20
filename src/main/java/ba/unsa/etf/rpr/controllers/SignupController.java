@@ -33,6 +33,7 @@ public class SignupController {
 
     @FXML
     void initialize(){
+        errorLabel.setText("");
         txtFieldImeID.getStyleClass().add("poljeJeIspravno");
         txtFieldPrezimeID.getStyleClass().add("poljeJeIspravno");
         txtFieldBrTelID.getStyleClass().add("poljeJeIspravno");
@@ -42,6 +43,8 @@ public class SignupController {
         txtFieldImeID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if (n.toString() == null || n.toString().length() <= 2 || !n.toString().matches("^[a-zA-Z]+$")) {
                     txtFieldImeID.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldImeID.getStyleClass().add("poljeNijeIspravno");
@@ -60,6 +63,8 @@ public class SignupController {
         txtFieldPrezimeID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if (n.toString() == null || n.toString().length() <= 2 || !n.toString().matches("^[a-zA-Z]+$")) {
                     txtFieldPrezimeID.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldPrezimeID.getStyleClass().add("poljeNijeIspravno");
@@ -78,6 +83,8 @@ public class SignupController {
         txtFieldAdresa.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if (n == null || n.length() <= 2) {
                     txtFieldAdresa.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldAdresa.getStyleClass().add("poljeNijeIspravno");
@@ -96,6 +103,8 @@ public class SignupController {
         txtFieldBrTelID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if ( n.toString() == null || !n.toString().matches("^\\+387[0-9]{9}$")) {
                     txtFieldBrTelID.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldBrTelID.getStyleClass().add("poljeNijeIspravno");
@@ -114,6 +123,8 @@ public class SignupController {
         txtFieldSifraID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if ( n.length() < 8) {
                     txtFieldSifraID.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldSifraID.getStyleClass().add("poljeNijeIspravno");
@@ -131,6 +142,8 @@ public class SignupController {
         txtFieldEmail.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                errorLabel.setText("");
+
                 if ( n.length() < 8  || !n.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
                     txtFieldEmail.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldEmail.getStyleClass().add("poljeNijeIspravno");
@@ -183,8 +196,8 @@ public class SignupController {
                 stage.show();
 
             }catch(ProjekatException | IOException e){
-                new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
-
+               // new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
+                errorLabel.setText(e.getMessage());
             }
     }
 }

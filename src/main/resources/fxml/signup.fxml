@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -25,6 +24,7 @@
           <rowConstraints>
               <RowConstraints maxHeight="248.66665649414062" minHeight="10.0" prefHeight="186.66665649414062" vgrow="SOMETIMES" />
               <RowConstraints maxHeight="213.33334350585938" minHeight="10.0" prefHeight="213.33334350585938" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="213.33334350585938" minHeight="10.0" prefHeight="213.33334350585938" vgrow="SOMETIMES" />
           </rowConstraints>
           <children>
               <ImageView fitHeight="403.0" fitWidth="590.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="2">
@@ -154,17 +154,20 @@
                      <children>
                         <HBox alignment="CENTER">
                            <children>
-                                  <Button fx:id="buttonID" defaultButton="true" mnemonicParsing="false" onAction="#actionSubmit" text="REGISTRUJ SE" textAlignment="CENTER" textFill="WHITE" />
-                              <Label fx:id="errorLabel" text="Label" textFill="#e91f1f" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0">
-                                 <HBox.margin>
-                                    <Insets top="10.0" />
-                                 </HBox.margin>
-                              </ProgressBar>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                        <Button fx:id="buttonID" defaultButton="true" mnemonicParsing="false" onAction="#actionSubmit" text="REGISTRUJ SE" textAlignment="CENTER" textFill="WHITE">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Label fx:id="errorLabel" text="Label" textFill="#dd5353">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
                            </children>
                         </HBox>
                      </children>

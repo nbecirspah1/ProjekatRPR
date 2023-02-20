@@ -28,19 +28,26 @@ public class KupacManager {
     }
 
     public void validateKupacPassword(String password) throws ProjekatException {
-        if(password.length() < 8 ||  !password.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")){
+        if(password.length() < 8 ){
             throw new ProjekatException("Password mora sadržavati najmanje 8 karaktera.");
 
         }
     }
-    public void validateKupacEmail(String email) throws ProjekatException {
-        if(email == null){
-            throw new ProjekatException("Email ne može biti null.");
+    public void validateKupacEmail(String email ) throws ProjekatException {
+        if(email == null ||  !email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")){
+            throw new ProjekatException("Email nije validan.");
 
         }
 
         if(!searchByEmail(email).isEmpty()){
             throw new ProjekatException("Već postoji account sa ovim emailom.");
+
+        }
+    }
+
+    private void validateKupacAdresa(String adress) throws ProjekatException {
+        if(adress.length()<=3){
+            throw new ProjekatException("Adresa nije validna.");
 
         }
     }
@@ -60,9 +67,10 @@ public class KupacManager {
         }
         validateKupacName(kupac.getName());
         validateKupacSurname(kupac.getSurname());
-        validateKupacPassword(kupac.getPassword());
-        validateKupacPhoneNumber(kupac.getPhoneNumber());
         validateKupacEmail(kupac.getEmail());
+        validateKupacAdresa(kupac.getAdress());
+        validateKupacPhoneNumber(kupac.getPhoneNumber());
+        validateKupacPassword(kupac.getPassword());
 
 
         try{
@@ -74,6 +82,8 @@ public class KupacManager {
         }
 
     }
+
+
 
     public List<Kupac> getAll() throws ProjekatException{
         return DaoFactory.kupacDao().getAll();
