@@ -227,8 +227,6 @@ public class ShopController {
             throw new RuntimeException(e);
         }
 
-        BuyItemController controller = loader.getController();
-        controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setTitle("Buy item");

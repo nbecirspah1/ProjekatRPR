@@ -13,12 +13,11 @@ import java.io.IOException;
 
 public class ONamaController {
     public void onBackClick(ActionEvent actionEvent) throws IOException {
-        SessionManager.getInstance().setProizvod(null);
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
 
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        stage.setTitle("Buy item");
+        stage.setTitle("Shop");
         Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
         stage.getIcons().add(icon);
         Scene currentScene = stage.getScene();

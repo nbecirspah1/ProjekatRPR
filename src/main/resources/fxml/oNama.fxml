@@ -34,7 +34,7 @@
                   </Label>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
                       <buttons>
-                          <Button fx:id="buyButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onKupiClicked" text="Kupi" textFill="WHITE" />
+                          <Button fx:id="buyButton" contentDisplay="CENTER" mnemonicParsing="false" text="Kupi" textFill="WHITE" />
                           <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onBackClick" text="Cancel" textFill="WHITE" />
                       </buttons>
                       <VBox.margin>

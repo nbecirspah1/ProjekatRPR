@@ -25,6 +25,7 @@ ba\unsa\etf\rpr\dao\KorpaDaoSQLImpl.class
 ba\unsa\etf\rpr\controllers\LoginController.class
 ba\unsa\etf\rpr\business\SessionManager.class
 ba\unsa\etf\rpr\domain\Kupac.class
+ba\unsa\etf\rpr\controllers\ONamaController.class
 ba\unsa\etf\rpr\dao\PlacanjeDao.class
 ba\unsa\etf\rpr\controllers\BuyItemController.class
 ba\unsa\etf\rpr\dao\Dao.class
