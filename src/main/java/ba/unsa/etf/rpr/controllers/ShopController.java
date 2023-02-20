@@ -219,5 +219,23 @@ public class ShopController {
     }
 
     public void onONamaClick(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/oNama.fxml"));
+        Parent newRoot = null;
+        try {
+            newRoot = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        BuyItemController controller = loader.getController();
+        controller.secondVBOXID.getChildren().addAll(vBox.getChildren());
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setTitle("Buy item");
+        Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
+        stage.getIcons().add(icon);
+        Scene currentScene = stage.getScene();
+        currentScene.setRoot(newRoot);
+
     }
 }
