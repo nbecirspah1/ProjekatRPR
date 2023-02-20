@@ -27,7 +27,7 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
             pDetalji.setColor(rs.getString("boja"));
             pDetalji.setSize(rs.getString("velicina"));
             pDetalji.setStockLevel(rs.getInt("kolicinaNaStanju"));
-            pDetalji.setProizvodID(rs.getInt("ProizvodID"));
+            pDetalji.setProizvodID(rs.getInt("proizvodID"));
             return pDetalji;
         }catch(SQLException e){
             throw new ProjekatException(e.getMessage(), e);
@@ -41,7 +41,7 @@ public class ProizvodDetaljiDaoSQLImpl extends AbstractDao<ProizvodDetalji> impl
         row.put("boja", object.getColor());
         row.put("velicina", object.getSize());
         row.put("kolicinaNaStanju", object.getStockLevel());
-        row.put("ProizvodID", object.getProizvodID());
+        row.put("proizvodID", object.getProizvodID());
 
         return row;
     }

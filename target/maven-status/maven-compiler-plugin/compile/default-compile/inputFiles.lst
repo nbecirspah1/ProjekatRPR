@@ -24,6 +24,7 @@ C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\KupacDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\AbstractDao.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\domain\Korpa.java
+C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\business\PlacanjeManager.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\PlacanjeDaoSQLImpl.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\DaoFactory.java
 C:\Users\DT User\IdeaProjects\ProjekatRPR\src\main\java\ba\unsa\etf\rpr\dao\ProizvodDetaljiDaoSQLImpl.java
