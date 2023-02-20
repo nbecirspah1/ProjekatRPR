@@ -32,14 +32,23 @@
             </ImageView>
             <VBox GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
-                  <Label text="EMAIL:" textFill="WHITE">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  <HBox>
+                     <children>
+                        <Label text="EMAIL:" textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Label text="Label" textFill="#dd5353">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
                      <VBox.margin>
-                        <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="30.0" />
                      </VBox.margin>
-                  </Label>
+                  </HBox>
                   <TextField fx:id="emailID" promptText="Email" style="-fx-text-fill: black;">
                      <opaqueInsets>
                         <Insets />
@@ -48,14 +57,23 @@
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label text="ŠIFRA:" textFill="WHITE">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  <HBox>
                      <VBox.margin>
                         <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
                      </VBox.margin>
-                  </Label>
+                     <children>
+                        <Label text="ŠIFRA:" textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Label text="Label" textFill="#dd5353">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
                   <PasswordField fx:id="passwordID" promptText="Šifra" style="-fx-text-fill: black;">
                      <opaqueInsets>
                         <Insets />
