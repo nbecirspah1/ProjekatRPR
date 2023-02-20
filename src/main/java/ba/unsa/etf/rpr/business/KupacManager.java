@@ -28,7 +28,7 @@ public class KupacManager {
     }
 
     public void validateKupacPassword(String password) throws ProjekatException {
-        if(password.length() < 8){
+        if(password.length() < 8 ||  !password.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")){
             throw new ProjekatException("Password mora sadržavati najmanje 8 karaktera.");
 
         }

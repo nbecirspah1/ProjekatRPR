@@ -131,7 +131,7 @@ public class SignupController {
         txtFieldEmail.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
-                if ( n.length() < 8) {
+                if ( n.length() < 8  || !n.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
                     txtFieldEmail.getStyleClass().removeAll("poljeJeIspravno");
                     txtFieldEmail.getStyleClass().add("poljeNijeIspravno");
 
