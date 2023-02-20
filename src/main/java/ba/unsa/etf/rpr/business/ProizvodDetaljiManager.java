@@ -9,8 +9,8 @@ import java.util.List;
 
 public class ProizvodDetaljiManager {
 
-    public List<ProizvodDetalji> getByProizvodID(int proizvodID) throws ProjekatException {
-        return DaoFactory.proizvodDetaljiDao().getByProizvodID(proizvodID);
+    public ProizvodDetalji getByProizvodIDAndSize(int proizvodID, String velicina) throws ProjekatException {
+        return DaoFactory.proizvodDetaljiDao().getByProizvodIDAndSize(proizvodID, velicina);
     }
 
     public ProizvodDetalji update(ProizvodDetalji item) throws ProjekatException{

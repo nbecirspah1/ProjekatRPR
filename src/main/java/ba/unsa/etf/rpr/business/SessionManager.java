@@ -9,6 +9,8 @@ public class SessionManager {
         private Proizvod proizvod;
 
         private String nacinPlacanja;
+
+        private String velicina;
         private SessionManager() {}
 
         public static SessionManager getInstance() {
@@ -45,5 +47,13 @@ public class SessionManager {
 
     public void setNacinPlacanja(String nacinPlacanja) {
         this.nacinPlacanja = nacinPlacanja;
+    }
+
+    public String getVelicina() {
+        return velicina;
+    }
+
+    public void setVelicina(String velicina) {
+        this.velicina = velicina;
     }
 }

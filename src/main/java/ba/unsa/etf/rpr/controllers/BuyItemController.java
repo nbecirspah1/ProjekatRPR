@@ -38,15 +38,27 @@ public class BuyItemController {
     public CheckBox checkBoxKartica;
     public Button buyButton;
     public Label errorLabel;
+    public ChoiceBox choiceBoxID;
+
+    private String[] velicine = { "XS", "S", "M", "L", "XL", "XXL"};
+
     KupacManager manager = new KupacManager();
     private int i=0;
     @FXML
     public void initialize() throws ProjekatException {
         errorLabel.setText("");
-        int id = SessionManager.getInstance().getKupacId();
+        choiceBoxID.getItems().addAll(velicine);
 
-        System.out.println("Ovo je id:" + id);
-        System.out.println("Ovo je proizvod" + SessionManager.getInstance().getProizvod().getOpis());
+
+        choiceBoxID.setOnAction(event -> {
+
+            String velicina = choiceBoxID.getValue().toString();
+            SessionManager.getInstance().setVelicina(velicina);
+        });
+
+
+
+        int id = SessionManager.getInstance().getKupacId();
         try{
             Kupac k = manager.getByID(id);
             imeField.setText(k.getName());
@@ -100,6 +112,9 @@ public class BuyItemController {
             if(errorLabel.getText() == ""){
                 errorLabel.setText("Niste odabrali način plaćanja");
             }
+        }
+        else if(choiceBoxID.getItems().size() == 0){
+            errorLabel.setText("Niste odabrali veličinu");
         }
         else{
 

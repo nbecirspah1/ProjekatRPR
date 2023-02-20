@@ -30,16 +30,16 @@ public class NotificationController {
     ProizvodDetaljiManager managerProizvod = new ProizvodDetaljiManager();
     public void DAClick(ActionEvent actionEvent) throws IOException, ProjekatException {
         int proizvodID = SessionManager.getInstance().getProizvod().getId();
+        String velicina = SessionManager.getInstance().getVelicina();
+        ProizvodDetalji proizvodDetalji = managerProizvod.getByProizvodIDAndSize(proizvodID, velicina);
 
-        List<ProizvodDetalji> proizvodDetalji = managerProizvod.getByProizvodID(proizvodID);
-        //int kolicina = proizvodDetalji.getStockLevel();
-        int kolicina =0;
+        int kolicina = proizvodDetalji.getStockLevel();
         if(kolicina == 0){
             new Alert(Alert.AlertType.NONE, "Nema ovog proizvoda na stanju", ButtonType.OK).show();
 
         }else{
             kolicina = kolicina -1;
-         //   proizvodDetalji.setStockLevel(kolicina);
+            proizvodDetalji.setStockLevel(kolicina);
 
             LocalDate datumPlacanja = LocalDate.now();
             Date date = Date.from(datumPlacanja.atStartOfDay(ZoneId.systemDefault()).toInstant());
