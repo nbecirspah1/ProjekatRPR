@@ -2,25 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" stylesheets="@../css/buyItem.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ONamaController">
+
+<BorderPane stylesheets="@../css/buyItem.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ONamaController">
     <top>
-        <ToolBar fx:id="toolBarID" BorderPane.alignment="CENTER">
+        <ToolBar fx:id="toolBarID" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
             <items>
                 <Button fx:id="nazadID" mnemonicParsing="false" onAction="#onBackClick" text="Nazad" />
             </items>
         </ToolBar>
     </top>
     <center>
-          <VBox fx:id="firstVBoxID" alignment="TOP_CENTER">
+          <VBox fx:id="firstVBoxID" alignment="TOP_CENTER" prefHeight="640.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
               <children>
                   <ImageView fitHeight="100.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true">
                       <image>
@@ -32,19 +34,46 @@
                           <Font size="24.0" />
                       </font>
                   </Label>
-                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
-                      <buttons>
-                          <Button fx:id="buyButton" contentDisplay="CENTER" mnemonicParsing="false" text="Kupi" textFill="WHITE" />
-                          <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#onBackClick" text="Cancel" textFill="WHITE" />
-                      </buttons>
-                      <VBox.margin>
-                          <Insets left="100.0" right="150.0" top="20.0" />
-                      </VBox.margin>
-                  </ButtonBar>
+            <TextArea editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="257.0" prefWidth="1024.0" style="-fx-border-color: #1D3735;" text="Alpine Outfitters je specijalizirana trgovina skijaške opreme koja posluje već više od 10 godina.&#10; Naša misija je pružiti našim kupcima vrhunsku kvalitetu skijaške opreme po pristupačnim cijenama,&#10; uz izvrsnu uslugu.&#10;&#10;&#10;Naša ekipa se sastoji od stručnih i iskusnih skijaša koji su uvijek spremni pružiti savjet i pomoć našim kupcima.&#10; Stalno pratimo najnovije trendove u industriji skijaške opreme kako bismo osigurali da naša ponuda uvijek&#10; bude u skladu s potrebama i željama naših kupaca.&#10;&#10;Uz to, Alpine Outfitters aktivno podržava lokalnu zajednicu i potiče ljubav prema skijanju i zimskim sportovima. &#10;Redovito sudjelujemo u događajima i natjecanjima, te podržavamo rad organizacija koje promiču zimski sport &#10;i sigurnost na skijalištima.&#10;&#10;Hvala što ste odabrali Alpine Outfitters za vašu skijašku opremu." wrapText="true" />
               </children>
-              <padding>
-                  <Insets left="100.0" right="100.0" />
-              </padding>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="100.0" right="100.0" top="50.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="50.0" top="10.0" />
+         </padding>
           </VBox>
     </center>
+   <bottom>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="BOTTOM_LEFT" text="Facebook i instagram account:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+                    <Button fx:id="buyButton" contentDisplay="CENTER" minWidth="51.0" mnemonicParsing="false" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/fbIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+                    <Button fx:id="cancelButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onBackClick" style="-fx-background-color: white;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/ig-logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
 </BorderPane>
