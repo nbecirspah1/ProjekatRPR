@@ -37,6 +37,8 @@ public class SignupController {
         txtFieldPrezimeID.getStyleClass().add("poljeJeIspravno");
         txtFieldBrTelID.getStyleClass().add("poljeJeIspravno");
         txtFieldAdresa.getStyleClass().add("poljeJeIspravno");
+        txtFieldSifraID.getStyleClass().add("poljeJeIspravno");
+        txtFieldEmail.getStyleClass().add("poljeJeIspravno");
         txtFieldImeID.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -101,6 +103,41 @@ public class SignupController {
                 } else {
                     txtFieldBrTelID.getStyleClass().removeAll("poljeNijeIspravno");
                     txtFieldBrTelID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
+
+        txtFieldSifraID.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if ( n.length() < 8) {
+                    txtFieldSifraID.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldSifraID.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldSifraID.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldSifraID.getStyleClass().add("poljeJeIspravno");
+
+
+                }
+
+
+            }
+        });
+        txtFieldEmail.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if ( n.length() < 8) {
+                    txtFieldEmail.getStyleClass().removeAll("poljeJeIspravno");
+                    txtFieldEmail.getStyleClass().add("poljeNijeIspravno");
+
+                } else {
+                    txtFieldEmail.getStyleClass().removeAll("poljeNijeIspravno");
+                    txtFieldEmail.getStyleClass().add("poljeJeIspravno");
 
 
                 }
