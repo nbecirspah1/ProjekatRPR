@@ -7,6 +7,8 @@ public class Placanje implements Idable{
     private Date paymentDate;
     private String paymentMethod;
 
+    private int kupacID;
+    private int proizvodID;
 
 
     public Placanje(int korpaID, Date paymentDate, String paymentMethod) {
@@ -52,5 +54,21 @@ public class Placanje implements Idable{
         if (o == null || getClass() != o.getClass()) return false;
         Placanje payment = (Placanje) o;
         return id == payment.id;
+    }
+
+    public int getKupacID() {
+        return kupacID;
+    }
+
+    public void setKupacID(int kupacID) {
+        this.kupacID = kupacID;
+    }
+
+    public int getProizvodID() {
+        return proizvodID;
+    }
+
+    public void setProizvodID(int proizvodID) {
+        this.proizvodID = proizvodID;
     }
 }
