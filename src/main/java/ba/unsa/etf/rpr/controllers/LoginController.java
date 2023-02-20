@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -23,8 +24,26 @@ public class LoginController {
     public PasswordField passwordID;
     public Button buttonID;
     public TextField emailID;
+    public Label errorEmail;
+    public Label errorPassword;
 
     private KupacManager manager = new KupacManager();
+
+    @FXML
+    void initialize(){
+        errorEmail.setText("");
+        errorPassword.setText("");
+
+        emailID.textProperty().addListener((observable, oldValue, newValue) ->{
+            errorEmail.setText("");
+            errorPassword.setText("");
+        });
+
+        passwordID.textProperty().addListener((observable, oldValue, newValue) ->{
+            errorEmail.setText("");
+            errorPassword.setText("");
+        });
+    }
 
 
 
@@ -33,12 +52,12 @@ public class LoginController {
         String password = passwordID.getText();
         List<Kupac> kupac = manager.searchByEmail(email);
         if(kupac.isEmpty()){
-            new Alert(Alert.AlertType.NONE, "Ne postoji account sa ovim emailom!", ButtonType.OK).show();
-
+           // new Alert(Alert.AlertType.NONE, "Ne postoji account sa ovim emailom!", ButtonType.OK).show();
+            errorEmail.setText("Ne postoji account sa ovim emailom!");
         }
         else if(!password.equals(kupac.get(0).getPassword())){
-            new Alert(Alert.AlertType.NONE, "Šifra nije validna. Pokušajte ponovo.", ButtonType.OK).show();
-
+            //new Alert(Alert.AlertType.NONE, "Šifra nije validna. Pokušajte ponovo.", ButtonType.OK).show();
+            errorPassword.setText("Šifra nije validna. Pokušajte ponovo.");
         }
         else{
             SessionManager.getInstance().setKupacId(kupac.get(0).getId());

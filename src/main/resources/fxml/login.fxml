@@ -39,7 +39,7 @@
                               <Insets />
                            </opaqueInsets>
                         </Label>
-                        <Label text="Label" textFill="#dd5353">
+                        <Label fx:id="errorEmail" text="Label" textFill="#dd5353">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -67,7 +67,7 @@
                               <Insets />
                            </opaqueInsets>
                         </Label>
-                        <Label text="Label" textFill="#dd5353">
+                        <Label fx:id="errorPassword" text="Label" textFill="#dd5353">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
