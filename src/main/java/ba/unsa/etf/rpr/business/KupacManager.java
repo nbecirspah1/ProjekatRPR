@@ -95,6 +95,12 @@ public class KupacManager {
         return DaoFactory.kupacDao().getAll();
     }
 
+    /**
+     *
+     * @param id
+     * @return Kupac
+     * @throws ProjekatException
+     */
     public Kupac getByID(int id) throws ProjekatException{
         return DaoFactory.kupacDao().getById(id);
     }
