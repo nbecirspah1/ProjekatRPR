@@ -7,6 +7,11 @@ import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import java.util.List;
 
 public class KupacManager {
+    /**
+     * validacija imena
+     * @param ime
+     * @throws ProjekatException
+     */
 
     public void validateKupacName(String ime) throws ProjekatException {
         if (ime == null || ime.length() <= 2 || !ime.matches("^[a-zA-Z]+$")) {
@@ -14,6 +19,11 @@ public class KupacManager {
         }
     }
 
+    /**
+     * validacija prezimena
+     * @param prezime
+     * @throws ProjekatException
+     */
     public void validateKupacSurname(String prezime) throws ProjekatException {
         if (prezime == null || prezime.length() <= 2 || !prezime.matches("^[a-zA-Z]+$")) {
             throw new ProjekatException("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2");
