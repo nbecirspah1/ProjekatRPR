@@ -44,12 +44,20 @@ public class BuyItemController {
 
     KupacManager manager = new KupacManager();
     private int i=0;
+
+    /**
+     * initialize metoda
+     * @throws ProjekatException
+     */
     @FXML
     public void initialize() throws ProjekatException {
         errorLabel.setText("");
         choiceBoxID.getItems().addAll(velicine);
 
-
+        /**
+         * setOnAction metoda za choiceBoxID, pomocu settera za atribut velicina u
+         * SessionManager klasu postavljamo vrijednost atributa velicina na izabranu vrijednost
+         */
         choiceBoxID.setOnAction(event -> {
             errorLabel.setText("");
             String velicina = choiceBoxID.getValue().toString();
