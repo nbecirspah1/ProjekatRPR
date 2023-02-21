@@ -41,6 +41,12 @@ public class KupacManager {
         }
     }
 
+    /**
+     * validacija passworda
+     * @param password
+     * @throws ProjekatException
+     */
+
     public void validateKupacPassword(String password) throws ProjekatException {
         if(password.length() < 8 ){
             throw new ProjekatException("Password mora sadržavati najmanje 8 karaktera.");
