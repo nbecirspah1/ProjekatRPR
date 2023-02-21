@@ -107,6 +107,12 @@ public class ShopController {
 
     }
 
+    /**
+     *
+     *  onAction metoda za kateogriju naocale
+
+     * @param actionEvent
+     */
     public void onKacigeClick(ActionEvent actionEvent) {
         try{
             choiceBoxID.setValue("-");
