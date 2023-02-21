@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.business.KupacManager;
 import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
@@ -78,7 +79,12 @@ public class LoginController {
     }
 
 
-
+    /**
+     *
+     * @param actionEvent
+     * @throws ProjekatException
+     * @throws IOException
+     */
     public void onButtonClick(ActionEvent actionEvent) throws ProjekatException, IOException {
         String email = emailID.getText();
         String password = passwordID.getText();
@@ -93,8 +99,10 @@ public class LoginController {
         }
         else{
             SessionManager.getInstance().setKupacId(kupac.get(0).getId());
-            Node node = (Node) actionEvent.getSource();
-            Stage stageOld = (Stage) node.getScene().getWindow();
+            Stage s = AppFX.getPrimaryStage();
+            s.close();
+            Node node1 = (Node) actionEvent.getSource();
+            Stage stageOld = (Stage) node1.getScene().getWindow();
             stageOld.close();
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
