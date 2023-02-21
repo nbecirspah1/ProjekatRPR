@@ -128,7 +128,11 @@ public class BuyItemController {
 
     }
 
-
+    /**
+     * onAction metoda za dugme "kupi", otvara prozor notification
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onKupiClicked(ActionEvent actionEvent) throws IOException {
         if(!checkBoxKartica.isSelected() && !checkBoxGotovina.isSelected()){
             if(errorLabel.getText() == ""){
@@ -142,7 +146,7 @@ public class BuyItemController {
 
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/notification.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Uspješna kupovina");
+            stage.setTitle("Kupovina");
             Image icon = new Image(getClass().getResourceAsStream("/img/logo.jpg"));
             stage.getIcons().add(icon);
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
