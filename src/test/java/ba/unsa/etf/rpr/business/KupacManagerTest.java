@@ -98,6 +98,25 @@ import java.util.List;
            Assertions.assertEquals("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2", projekatException2.getMessage());
 
        }
+
+       @Test
+       void validateKupacAdresa() throws ProjekatException {
+           String correctAddress = "Adresa 566";
+           try{
+               Mockito.doCallRealMethod().when(kupacManager).validateKupacAdresa(correctAddress);
+           }catch (ProjekatException e){
+               e.printStackTrace();
+               Assertions.assertTrue(false);
+           }
+
+           String incorrectAdressShort = "A 1";
+           Mockito.doCallRealMethod().when(kupacManager).validateKupacAdresa(incorrectAdressShort);
+           ProjekatException projekatException1 = Assertions.assertThrows(ProjekatException.class, () -> {
+               kupacManager.validateKupacAdresa(incorrectAdressShort);}, "Adresa nije validna.");
+           Assertions.assertEquals("Adresa nije validna.", projekatException1.getMessage());
+
+
+       }
        @Test
        void validateKupacEmail() throws ProjekatException {
            String correctSurname = "neko@gmail.com";

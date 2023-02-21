@@ -45,7 +45,7 @@ public class KupacManager {
         }
     }
 
-    private void validateKupacAdresa(String adress) throws ProjekatException {
+    public void validateKupacAdresa(String adress) throws ProjekatException {
         if(adress.length()<=3){
             throw new ProjekatException("Adresa nije validna.");
 
