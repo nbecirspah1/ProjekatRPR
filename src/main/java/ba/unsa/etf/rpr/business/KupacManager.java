@@ -53,6 +53,12 @@ public class KupacManager {
 
         }
     }
+
+    /**
+     * validacija emaila
+     * @param email
+     * @throws ProjekatException
+     */
     public void validateKupacEmail(String email ) throws ProjekatException {
         if(email == null ||  !email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")){
             throw new ProjekatException("Email nije validan.");
