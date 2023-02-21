@@ -1,7 +1,9 @@
 package ba.unsa.etf.rpr.business;
 
+import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.dao.KupacDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Kupac;
+import ba.unsa.etf.rpr.exceptions.ProjekatException;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,4 +46,46 @@ import java.util.List;
                                     new Kupac("NekoSest", "NekicSest", "Adresa 6", "+387062123125", "Password5", "neko6@gmail.com")));
 
     }
+
+    @Test
+       void validateKupacName() throws ProjekatException {
+        String correctName = "NekoTri";
+        try{
+            Mockito.doCallRealMethod().when(kupacManager).validateKupacName(correctName);
+        }catch (ProjekatException e){
+            e.printStackTrace();
+            Assertions.assertTrue(false);
+        }
+
+        String incorrectNameShort = "AA";
+        Mockito.doCallRealMethod().when(kupacManager).validateKupacName(incorrectNameShort);
+        ProjekatException projekatException1 = Assertions.assertThrows(ProjekatException.class, () -> {
+            kupacManager.validateKupacName(incorrectNameShort);}, "Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2");
+        Assertions.assertEquals("Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2", projekatException1.getMessage());
+
+        String incorrectNameNumbers = "Ajla3";
+        Mockito.doCallRealMethod().when(kupacManager).validateKupacName(incorrectNameNumbers);
+        ProjekatException projekatException2 = Assertions.assertThrows(ProjekatException.class, () -> {
+            kupacManager.validateKupacName(incorrectNameNumbers);}, "Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2");
+        Assertions.assertEquals("Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2", projekatException2.getMessage());
+
+    }
+
+       @Test
+       void add() throws ProjekatException {
+           MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
+           daoFactoryMockedStatic.when(DaoFactory::kupacDao).thenReturn(kupacDaoSQLMock);
+        /*
+        An exception will be thrown because our instance of Category.java class has value for id
+         */
+           when(DaoFactory.kupacDao().getAll()).thenReturn(kupci);
+           Mockito.doCallRealMethod().when(kupacManager).add(kupac);
+           ProjekatException quoteException = Assertions.assertThrows(ProjekatException.class, () -> {
+               kupacManager.add(kupac);}, "Kategorija sa postojećim ID-em se ne može dodati. ID mora biti automatski generisan.");
+
+           Assertions.assertEquals("Kategorija sa postojećim ID-em se ne može dodati. ID mora biti automatski generisan.", quoteException.getMessage());
+           daoFactoryMockedStatic.verify(DaoFactory::kupacDao);
+           Mockito.verify(kupacManager).add(kupac);
+           daoFactoryMockedStatic.close();
+       }
 }
