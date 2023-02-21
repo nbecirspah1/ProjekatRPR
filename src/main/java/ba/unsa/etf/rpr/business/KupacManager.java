@@ -52,6 +52,13 @@ public class KupacManager {
         }
     }
 
+    /**
+     * vraca Kupce sa emailom koji je jednak emailu koji se salje kao parametar funkciji
+     * @param email
+     * @return
+     * @throws ProjekatException
+     */
+
     public List<Kupac> searchByEmail(String email) throws ProjekatException{
         try{
          return DaoFactory.kupacDao().searchByEmail(email);
