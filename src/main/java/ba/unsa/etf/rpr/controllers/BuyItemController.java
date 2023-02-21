@@ -65,7 +65,6 @@ public class BuyItemController {
         });
 
 
-
         int id = SessionManager.getInstance().getKupacId();
         try{
             Kupac k = manager.getByID(id);
@@ -83,6 +82,13 @@ public class BuyItemController {
 
 
     }
+
+    /**
+     * onBackCLick metoda koja se poziva kada kliknemo na dugme za
+     * povratak na prethodni prozor
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onBackClick(ActionEvent actionEvent) throws IOException {
         SessionManager.getInstance().setProizvod(null);
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
