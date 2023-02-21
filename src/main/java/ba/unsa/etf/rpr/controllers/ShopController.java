@@ -141,6 +141,11 @@ public class ShopController {
         }
     }
 
+    /**
+     * onAction metoda za prikaz kategorije "skije"
+     * @param actionEvent
+     */
+
     public void onSkijeClick(ActionEvent actionEvent) {
         try{
             choiceBoxID.setValue("-");
