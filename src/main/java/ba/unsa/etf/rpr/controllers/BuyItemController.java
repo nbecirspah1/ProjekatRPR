@@ -102,7 +102,10 @@ public class BuyItemController {
         currentScene.setRoot(newRoot);
     }
 
-
+    /**
+     * onAction metoda ukoliko odaberemo karticni nacin placanja
+     * @param actionEvent
+     */
     public void onKarticaClicked(ActionEvent actionEvent) {
         if (checkBoxGotovina.isSelected()) {
             checkBoxGotovina.setSelected(false);
