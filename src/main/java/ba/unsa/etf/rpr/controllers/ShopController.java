@@ -125,6 +125,11 @@ public class ShopController {
         }
     }
 
+    /**
+     * onAction metoda za prikaz svih proizvoda
+     * @param actionEvent
+     */
+
     public void onSveClick(ActionEvent actionEvent) {
         try{
             choiceBoxID.setValue("-");
