@@ -162,7 +162,11 @@ public class SignupController {
 
     }
 
-
+    /**
+     *
+     * @param actionEvent
+     * @throws ProjekatException
+     */
     public void actionSubmit(ActionEvent actionEvent) throws ProjekatException {
 
 
