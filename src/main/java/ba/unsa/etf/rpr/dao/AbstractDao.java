@@ -141,6 +141,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Updateovanje odgovarajuceg reda u tabeli
+     * @param item
+     * @return
+     * @throws ProjekatException
+     */
+
     public T update(T item) throws ProjekatException{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
