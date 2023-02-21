@@ -89,6 +89,11 @@ public class ShopController {
         }
     }
 
+    /**
+     * onAction metoda za kateogriju naocale
+     * @param actionEvent
+     * @throws ProjekatException
+     */
     public void onNaocaleClick(ActionEvent actionEvent) throws ProjekatException {
         try{
             choiceBoxID.setValue("-");
