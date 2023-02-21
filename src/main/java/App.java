@@ -1,4 +1,5 @@
 
+import ba.unsa.etf.rpr.domain.Kategorija;
 import net.bytebuddy.asm.Advice;
 import org.apache.commons.cli.*;
 import java.sql.Date;
@@ -32,6 +33,10 @@ public class App {
         printWriter.close();
     }
 
+    /**
+     *
+     * @return
+     */
     public static Options addOptions() {
         Options options = new Options();
         options.addOption(addUser);
@@ -41,5 +46,22 @@ public class App {
         return options;
     }
 
+    public static Kategorija searchThroughCategories(List<Kategorija> listOfCategories, String categoryName) {
 
-}
+        Kategorija category = null;
+        category = listOfCategories.stream().filter(cat -> cat.getName().toLowerCase().equals(categoryName.toLowerCase())).findAny().get();
+        return category;
+
+    }
+
+    public static void main(String[] args) throws Exception {
+        Options options = addOptions();
+        CommandLineParser commandLineParser = new DefaultParser();
+        CommandLine cl = commandLineParser.parse(options, args);
+
+
+
+    }
+
+
+    }
