@@ -61,6 +61,12 @@ public class KupacManager {
         }
     }
 
+    /**
+     * Dodavanje novog kupca u db
+     * @param kupac
+     * @return
+     * @throws ProjekatException
+     */
     public Kupac add(Kupac kupac) throws ProjekatException{
         if(kupac.getId() != 0){
             throw new ProjekatException("Kategorija sa postojećim ID-em se ne može dodati. ID mora biti automatski generisan.");
