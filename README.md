@@ -59,16 +59,16 @@ Nadamo se da će Vam se naša aplikacija svidjeti!
 ![Alt Text](./src/main/resources/img/login.png)
 
 ### Registracija
-![Alt Text](./src/main/resources/img/registracija.PNG)
+![Alt Text](./src/main/resources/img/registracija.png)
 
 ### O Nama
-![Alt Text](./src/main/resources/img/oNama.PNG)
+![Alt Text](./src/main/resources/img/oNama.png)
 
 ### Izgled stranice nakon korisnikove prijave ili registracije
-![Alt Text](./src/main/resources/img/homePage.PNG)
+![Alt Text](./src/main/resources/img/homePage.png)
 
 ### Kupovina proizvoda 
-![Alt Text](./src/main/resources/img/kupovina.PNG)
+![Alt Text](./src/main/resources/img/kupovina.png)
 
 
 
