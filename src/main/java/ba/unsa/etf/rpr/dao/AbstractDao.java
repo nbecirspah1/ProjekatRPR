@@ -8,13 +8,9 @@ import java.util.*;
 
 public abstract class AbstractDao<T extends Idable> implements Dao<T>{
     private static Connection connection = null;
-    private String imeTabele;
-
-    public AbstractDao(String imeTabele){
-        this.imeTabele = imeTabele;
-        createConnection();
-    }
-
+    /**
+     *Creates connection to db
+     */
     private static void createConnection(){
         if(AbstractDao.connection == null){
             try {
@@ -39,6 +35,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
                 });
             }
         }
+    }
+
+    private String imeTabele;
+
+    public AbstractDao(String imeTabele){
+        this.imeTabele = imeTabele;
+        createConnection();
     }
 
     public static Connection getConnection(){
