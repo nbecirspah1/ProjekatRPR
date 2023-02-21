@@ -87,6 +87,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         return executeQuery("SELECT * FROM " + this.imeTabele, null);
     }
 
+    /**
+     * Metoda za brisanje reda iz tabele sa odgovarajucim id-em
+     * @param id
+     * @throws ProjekatException
+     */
+
     public void delete(int id) throws ProjekatException{
         String query = "DELETE FROM" + this.imeTabele + "WHERE id = ?";
         try{
