@@ -105,6 +105,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     *
+     * @param item koji je potrebno dodati u bazu
+     * @return
+     * @throws ProjekatException
+     */
+
     public T add(T item) throws ProjekatException{
         Map<String, Object> row = object2row(item);
         Map<String, Object> row1 = object2row(item);
