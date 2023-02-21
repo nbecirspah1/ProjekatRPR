@@ -68,6 +68,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
      */
     public abstract Map<String, Object> object2row(T object);
 
+    /**
+     *
+     * @param id primarni kljuc entiteta
+     * @return
+     * @throws ProjekatException
+     */
     public T getById(int id) throws ProjekatException{
         return executeQueryUnique("SELECT * FROM " + this.imeTabele + " WHERE id = ?", new Object[]{id});
     }
