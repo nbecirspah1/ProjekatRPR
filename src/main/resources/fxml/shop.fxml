@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -16,10 +17,13 @@
          <content>
             <FlowPane fx:id="flowPaneID" alignment="CENTER" columnHalignment="CENTER" hgap="50.0" prefWrapLength="1024.0" vgap="20.0" />
          </content>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </ScrollPane>
    </center>
    <top>
-      <ToolBar fx:id="toolBarID" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ToolBar fx:id="toolBarID" BorderPane.alignment="CENTER">
         <items>
             <ImageView fitHeight="55.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                <image>

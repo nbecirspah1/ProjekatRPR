@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Proizvod;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -71,6 +72,9 @@ public class ShopController {
                     try{
                         if(kategorija!="-") {
                             List<Proizvod> proizvodiList = manager.getByCategory(kategorija);
+                            dodavanjeProizvoda(proizvodiList);
+                        }else{
+                            List<Proizvod> proizvodiList = manager.getAll();
                             dodavanjeProizvoda(proizvodiList);
                         }
 
@@ -171,7 +175,7 @@ public class ShopController {
     public void dodavanjeProizvoda(List<Proizvod> proizvodi) {
         scrollPaneID.setVvalue(0.0);
         flowPaneID.getChildren().clear();
-
+        int i =0;
         for (Proizvod proizvod : proizvodi) {
 
             try {
@@ -192,14 +196,47 @@ public class ShopController {
                 vBox.setAlignment(Pos.CENTER);
                 vBox.setSpacing(10.0);
                 vBox.setId("vBoxID");
+                if(i == proizvodi.size() - 1 && proizvodi.size()%2!=0){
+                    vBox.setOnMouseEntered(event -> {
+                        Image chartIcon = new Image(getClass().getResourceAsStream("/img/buy-icon.png"));
+                        ImageView chartImageView = new ImageView(chartIcon);
+                        chartImageView.setFitWidth(50);
+                        chartImageView.setFitHeight(50);
+                        vBox.getChildren().add(chartImageView);
+                        scrollPaneID.setVvalue(1);
 
-                vBox.setOnMouseEntered(event -> {
-                    Image chartIcon = new Image(getClass().getResourceAsStream("/img/buy-icon.png"));
-                    ImageView chartImageView = new ImageView(chartIcon);
-                    chartImageView.setFitWidth(50);
-                    chartImageView.setFitHeight(50);
-                    vBox.getChildren().add(chartImageView);
-                });
+                    //    scrollPaneID.setVvalue(scrollPaneID.getVmax());
+
+                    });
+
+                }else if((i == proizvodi.size()-1 || i==proizvodi.size()-2) && proizvodi.size()%2==0){
+                    vBox.setOnMouseEntered(event -> {
+                        Image chartIcon = new Image(getClass().getResourceAsStream("/img/buy-icon.png"));
+                        ImageView chartImageView = new ImageView(chartIcon);
+                        chartImageView.setFitWidth(50);
+                        chartImageView.setFitHeight(50);
+                        vBox.getChildren().add(chartImageView);
+                       // scrollPaneID.setVvalue(scrollPaneID.getVmax() );
+                        scrollPaneID.setVvalue(1);
+
+
+                    });
+                        //    scrollPaneID.setVvalue(scrollPaneID.getVmax());}
+                }
+                else{
+                    vBox.setOnMouseEntered(event -> {
+                        Image chartIcon = new Image(getClass().getResourceAsStream("/img/buy-icon.png"));
+                        ImageView chartImageView = new ImageView(chartIcon);
+                        chartImageView.setFitWidth(50);
+                        chartImageView.setFitHeight(50);
+                        vBox.getChildren().add(chartImageView);
+
+
+
+                    });
+
+                }
+
 
                 vBox.setOnMouseExited(event -> {
                     if(vBox.getChildren().size()!=0){
@@ -207,6 +244,8 @@ public class ShopController {
 
                     }
                 });
+
+
 
 
                 flowPaneID.getChildren().add(vBox);
@@ -237,6 +276,7 @@ public class ShopController {
                 new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
 
             }
+            i++;
         }
     }
 
