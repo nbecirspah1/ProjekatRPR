@@ -11,13 +11,18 @@ public class Placanje implements Idable{
     private int proizvodID;
 
 
-    public Placanje(int korpaID, Date paymentDate, String paymentMethod) {
-        this.paymentDate = paymentDate;
-        this.paymentMethod = paymentMethod;
-    }
+
 
     public Placanje() {
 
+    }
+
+    public Placanje(int id, Date paymentDate, String paymentMethod, int kupacID, int proizvodID) {
+        this.id = id;
+        this.paymentDate = paymentDate;
+        this.paymentMethod = paymentMethod;
+        this.kupacID = kupacID;
+        this.proizvodID = proizvodID;
     }
 
     @Override

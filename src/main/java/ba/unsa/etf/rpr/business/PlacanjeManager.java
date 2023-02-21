@@ -1,11 +1,17 @@
 package ba.unsa.etf.rpr.business;
 
 import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.dao.KupacDaoSQLImpl;
+import ba.unsa.etf.rpr.dao.PlacanjeDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Kupac;
 import ba.unsa.etf.rpr.domain.Placanje;
 import ba.unsa.etf.rpr.exceptions.ProjekatException;
 
+import java.util.List;
+
 public class PlacanjeManager {
+
+
 
     public Placanje add(Placanje placanje) throws ProjekatException {
         if(placanje.getId() != 0){
