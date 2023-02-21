@@ -39,6 +39,10 @@ public class ShopController {
     private ProizvodManager manager = new ProizvodManager();
     private VBox vBox;
 
+    /**
+     *
+     * @throws ProjekatException
+     */
     @FXML
     public void initialize() throws ProjekatException {
         try {
