@@ -114,6 +114,10 @@ public class BuyItemController {
         SessionManager.getInstance().setNacinPlacanja("karticno placanje");
     }
 
+    /**
+     *onAction metoda ukoliko odaberemo gotovinski nacin placanja
+     * @param actionEvent
+     */
     public void onGotovinaClicked(ActionEvent actionEvent) {
         if (checkBoxKartica.isSelected()){
             checkBoxKartica.setSelected(false);
@@ -123,6 +127,7 @@ public class BuyItemController {
 
 
     }
+
 
     public void onKupiClicked(ActionEvent actionEvent) throws IOException {
         if(!checkBoxKartica.isSelected() && !checkBoxGotovina.isSelected()){
