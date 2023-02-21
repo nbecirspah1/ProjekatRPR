@@ -71,6 +71,31 @@ import java.util.List;
 
     }
 
+
+       @Test
+       void validateKupacSurname() throws ProjekatException {
+           String correctSurname = "NekicTri";
+           try{
+               Mockito.doCallRealMethod().when(kupacManager).validateKupacName(correctSurname);
+           }catch (ProjekatException e){
+               e.printStackTrace();
+               Assertions.assertTrue(false);
+           }
+
+           String incorrectSurnameShort = "AA";
+           Mockito.doCallRealMethod().when(kupacManager).validateKupacSurname(incorrectSurnameShort);
+           ProjekatException projekatException1 = Assertions.assertThrows(ProjekatException.class, () -> {
+               kupacManager.validateKupacSurname(incorrectSurnameShort);}, "Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2");
+           Assertions.assertEquals("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2", projekatException1.getMessage());
+
+           String incorrectSurnameNumbers = "Nekic3";
+           Mockito.doCallRealMethod().when(kupacManager).validateKupacSurname(incorrectSurnameNumbers);
+           ProjekatException projekatException2 = Assertions.assertThrows(ProjekatException.class, () -> {
+               kupacManager.validateKupacSurname(incorrectSurnameNumbers);}, "Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2");
+           Assertions.assertEquals("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2", projekatException2.getMessage());
+
+       }
+
        @Test
        void add() throws ProjekatException {
            MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
