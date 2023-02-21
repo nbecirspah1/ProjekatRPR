@@ -39,6 +39,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
 
     private String imeTabele;
 
+    /**
+     *Konstruktor
+     * @param imeTabele
+     *
+     */
     public AbstractDao(String imeTabele){
         this.imeTabele = imeTabele;
         createConnection();
