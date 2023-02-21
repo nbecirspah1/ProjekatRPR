@@ -32,5 +32,14 @@ public class App {
         printWriter.close();
     }
 
+    public static Options addOptions() {
+        Options options = new Options();
+        options.addOption(addUser);
+        options.addOption(getItems);
+        options.addOption(getCategories);
+        options.addOption(getCategories);
+        return options;
+    }
+
 
 }
