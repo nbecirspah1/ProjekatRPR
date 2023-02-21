@@ -160,6 +160,26 @@ import java.util.List;
 
        }
 
+
+       @Test
+       void validateKupacPhoneNumber() throws ProjekatException {
+           String correctPhoneNumber = "+387062111111";
+           try{
+               Mockito.doCallRealMethod().when(kupacManager).validateKupacPhoneNumber(correctPhoneNumber);
+           }catch (ProjekatException e){
+               e.printStackTrace();
+               Assertions.assertTrue(false);
+           }
+
+           String incorrectPhoneNumber = "062123123";
+           Mockito.doCallRealMethod().when(kupacManager).validateKupacPhoneNumber(incorrectPhoneNumber);
+           ProjekatException projekatException1 = Assertions.assertThrows(ProjekatException.class, () -> {
+               kupacManager.validateKupacPhoneNumber(incorrectPhoneNumber);}, "Broj telefona mora biti u formatu +387XXXXXXXXX");
+           Assertions.assertEquals("Broj telefona mora biti u formatu +387XXXXXXXXX", projekatException1.getMessage());
+
+
+       }
+
        @Test
        void add() throws ProjekatException {
            MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
