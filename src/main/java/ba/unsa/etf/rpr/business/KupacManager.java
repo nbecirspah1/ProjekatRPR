@@ -30,7 +30,11 @@ public class KupacManager {
         }
     }
 
-
+    /**
+     * validacija broja Telefona
+     * @param phoneNumber
+     * @throws ProjekatException
+     */
     public void validateKupacPhoneNumber(String phoneNumber) throws ProjekatException {
         if (phoneNumber == null || !phoneNumber.matches("^\\+387[0-9]{9}$")) {
             throw new ProjekatException("Broj telefona mora biti u formatu +387XXXXXXXXX");
