@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.business.KupacManager;
 import ba.unsa.etf.rpr.business.SessionManager;
 import ba.unsa.etf.rpr.domain.Kupac;
@@ -166,6 +167,7 @@ public class SignupController {
 
 
 
+
         String ime = txtFieldImeID.getText();
         String prezime = txtFieldPrezimeID.getText();
         String adresa = txtFieldAdresa.getText();
@@ -184,6 +186,8 @@ public class SignupController {
                 manager.add(kupac);
                 SessionManager.getInstance().setKupacId(kupac.getId());
                 Node node = (Node) actionEvent.getSource();
+                Stage s = AppFX.getPrimaryStage();
+                s.close();
                 Stage stageOld = (Stage) node.getScene().getWindow();
                 stageOld.close();
                 Stage stage = new Stage();
